@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uredi urnik — EP laboratorij</title>
+<style>
+  :root { --bg:#0d1b2a; --panel:#16263a; --line:#2c445f; --ink:#eaf2fb; --ink-dim:#9fb6cf; --accent:#37b7c3; --ok:#3ec97a; --err:#ff9b9b; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:"Segoe UI",system-ui,sans-serif; background:var(--bg); color:var(--ink); min-height:100vh; padding:16px; }
+  .wrap { max-width:760px; margin:0 auto; }
+  h1 { font-size:22px; margin-bottom:4px; }
+  .sub { color:var(--ink-dim); font-size:14px; margin-bottom:16px; }
+  #lock, #editor { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px; }
+  #editor { display:none; }
+  body.unlocked #lock { display:none; }
+  body.unlocked #editor { display:block; }
+  input, textarea { width:100%; background:var(--bg); color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:12px; font-size:16px; }
+  textarea { min-height:340px; font-family:"Consolas",monospace; font-size:14px; line-height:1.6; resize:vertical; }
+  label { display:block; font-size:13px; color:var(--ink-dim); margin:14px 0 6px; }
+  button { background:var(--accent); color:#062028; border:none; border-radius:8px; padding:13px 24px; font-size:16px; font-weight:700; cursor:pointer; margin-top:14px; }
+  button.secondary { background:transparent; color:var(--ink-dim); border:1px solid var(--line); }
+  .row { display:flex; gap:10px; flex-wrap:wrap; }
+  .msg { margin-top:12px; font-size:14px; min-height:20px; }
+  .msg.ok { color:var(--ok); } .msg.err { color:var(--err); }
+  .hint { color:var(--ink-dim); font-size:12px; margin-top:8px; line-height:1.5; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Uredi urnik</h1>
+  <div class="sub">EP laboratorij — urejanje razporeda posegov</div>
+
+  <div id="lock">
+    <label>Geslo</label>
+    <input id="pw" type="password" placeholder="Geslo" autocomplete="current-password">
+    <label>GitHub žeton (samo prvič na tej napravi)</label>
+    <input id="tok" type="password" placeholder="ghp_… (shrani se lokalno)">
+    <button onclick="tryUnlock()">Odkleni</button>
+    <div class="msg err" id="lockErr"></div>
+    <div class="hint">Žeton se shrani samo v tej napravi (localStorage), ne na splet. Uporabi fine-grained žeton z dostopom le do tega repozitorija (Contents: read/write).</div>
+  </div>
+
+  <div id="editor">
+    <label>Urnik (vsak dan vrstica z datumom, nato <b>Ime; opis</b>)</label>
+    <textarea id="text" spellcheck="false"></textarea>
+    <div class="row">
+      <button onclick="save()">Shrani</button>
+      <button class="secondary" onclick="reload()">Ponovno naloži</button>
+    </div>
+    <div class="msg" id="msg"></div>
+    <div class="hint">Označbo <b>(ŠTUDIJA)</b> tabla samodejno poudari. Po shranjevanju se TV osveži v nekaj minutah.</div>
+  </div>
+</div>
+
+<script>
+// ===== CONFIG (must match index.html) =====
+const PW_HASH = "893df7a5bbed622c448894bed54812dc03ea03b2a3fcd5610472ec4d887c5d3a"; // "ep2026"
+const OWNER = "yourusername";
+const REPO  = "ep-urnik";
+const PATH  = "schedule.txt";
+const BRANCH = "main";
+const WRAP_BASE64 = true;   // must match how the board reads it (index.html auto-detects)
+// ==========================================
+
+async function sha256hex(s){ const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)); return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join(''); }
+const api = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`;
+let TOKEN = null;
+
+async function tryUnlock(){
+  const pw = document.getElementById('pw').value;
+  if (await sha256hex(pw) !== PW_HASH){ document.getElementById('lockErr').textContent="Napačno geslo."; return; }
+  const t = document.getElementById('tok').value.trim();
+  if (t) localStorage.setItem('gh_tok', t);
+  TOKEN = localStorage.getItem('gh_tok');
+  if (!TOKEN){ document.getElementById('lockErr').textContent="Vnesi GitHub žeton (prvič)."; return; }
+  document.body.classList.add('unlocked');
+  reload();
+}
+
+function b64encode(s){ return btoa(unescape(encodeURIComponent(s))); }
+function b64decode(s){ try { return decodeURIComponent(escape(atob(s.replace(/\s/g,'')))); } catch(e){ return s; } }
+
+async function reload(){
+  msg('Nalagam…','');
+  try{
+    const res = await fetch(api+`?ref=${BRANCH}&t=`+Date.now(), {
+      headers:{ 'Authorization':`Bearer ${TOKEN}`, 'Accept':'application/vnd.github+json' }, cache:'no-store'
+    });
+    if(!res.ok) throw new Error("HTTP "+res.status);
+    const j = await res.json();
+    const raw = b64decode(j.content);              // GitHub returns base64 of file bytes
+    const text = WRAP_BASE64 ? b64decode(raw) : raw; // unwrap our own base64 layer if used
+    document.getElementById('text').value = text;
+    msg('Naloženo.','ok');
+  }catch(e){ msg("Napaka pri nalaganju: "+e.message,'err'); }
+}
+
+async function save(){
+  msg('Shranjujem…','');
+  try{
+    // get current sha
+    const g = await fetch(api+`?ref=${BRANCH}&t=`+Date.now(), {
+      headers:{ 'Authorization':`Bearer ${TOKEN}`, 'Accept':'application/vnd.github+json' }, cache:'no-store'
+    });
+    const sha = g.ok ? (await g.json()).sha : undefined;
+    const text = document.getElementById('text').value;
+    const stored = WRAP_BASE64 ? b64encode(text) : text;  // our optional obfuscation layer
+    const body = { message:'Update schedule (web editor)', content:b64encode(stored), branch:BRANCH };
+    if (sha) body.sha = sha;
+    const p = await fetch(api, {
+      method:'PUT',
+      headers:{ 'Authorization':`Bearer ${TOKEN}`, 'Accept':'application/vnd.github+json', 'Content-Type':'application/json' },
+      body: JSON.stringify(body)
+    });
+    if(!p.ok) throw new Error("HTTP "+p.status+": "+(await p.text()));
+    msg('Shranjeno. TV se osveži v nekaj minutah.','ok');
+  }catch(e){ msg("Napaka pri shranjevanju: "+e.message,'err'); }
+}
+
+function msg(t,cls){ const m=document.getElementById('msg'); m.textContent=t; m.className='msg '+(cls||''); }
+
+// auto-unlock if token already stored (still asks password)
+</script>
+</body>
+</html>
