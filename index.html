@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Urnik posegov — EP laboratorij</title>
+<title>Urnik posegov — EP laboratorij KSO</title>
 <style>
   body { font-family: "Segoe UI", Arial, sans-serif; background: #0d1b2a; color: #eaf2fb; margin: 0; padding: 0; }
   #lock { position: fixed; top:0; left:0; right:0; bottom:0; background:#0d1b2a; text-align:center; padding-top:18%; }
@@ -15,6 +15,7 @@
   .board-head { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:20px; border-bottom:2px solid #37b7c3; padding-bottom:12px; }
   .board-head h1 { font-size:34px; font-weight:bold; margin:0; }
   .board-head .now { font-size:20px; color:#9fb6cf; }
+  .board-head #weather { margin-right:18px; color:#37b7c3; }
   .days { display:block; }
   .day { display:inline-block; vertical-align:top; width:31%; min-width:300px; margin:0 1% 22px 0; background:#16263a; border:1px solid #2c445f; border-radius:12px; overflow:hidden; }
   .day.is-today { border-color:#37b7c3; }
@@ -36,7 +37,7 @@
 <body>
 
 <div id="lock">
-  <h2>Urnik posegov — EP laboratorij</h2>
+  <h2>Urnik posegov — EP laboratorij KSO</h2>
   <p style="color:#9fb6cf;">Vnesi geslo za prikaz urnika.</p>
   <div><input id="pw" type="password" placeholder="Geslo"></div>
   <button onclick="tryUnlock()">Odkleni</button>
@@ -47,7 +48,7 @@
   <div class="board">
     <div class="board-head">
       <h1>Urnik posegov — EP laboratorij</h1>
-      <div class="now" id="clock"></div>
+      <div class="now"><span id="weather"></span><span id="clock"></span></div>
     </div>
     <div class="days" id="days"><div class="state">Nalagam urnik…</div></div>
     <div class="updated" id="updated"></div>
@@ -64,6 +65,10 @@ var URL_SECRET = "change-this-to-a-long-random-string";
 var SCHEDULE_URL = "schedule.txt";
 var REFRESH_MS = 5 * 60 * 1000;
 var COOKIE_DAYS = 365;
+// Ljubljana coordinates for the outside temperature:
+var WEATHER_LAT = 46.05;
+var WEATHER_LON = 14.51;
+var WEATHER_MS = 10 * 60 * 1000; // refresh weather every 10 min
 // =========================================
 
 var DOW = ["Nedelja","Ponedeljek","Torek","Sreda","Četrtek","Petek","Sobota"];
@@ -182,11 +187,30 @@ function tick(){
     DOW[n.getDay()] + ", " + n.getDate() + "." + (n.getMonth()+1) + "." + n.getFullYear() + "  " + pad(n.getHours()) + ":" + pad(n.getMinutes());
 }
 
+function loadWeather(){
+  var xhr = new XMLHttpRequest();
+  var url = "https://api.open-meteo.com/v1/forecast?latitude=" + WEATHER_LAT +
+            "&longitude=" + WEATHER_LON + "&current_weather=true";
+  xhr.open("GET", url, true);
+  xhr.onreadystatechange = function(){
+    if (xhr.readyState === 4 && xhr.status === 200){
+      try {
+        var data = eval("(" + xhr.responseText + ")"); // old-browser-safe JSON parse
+        var t = data.current_weather.temperature;
+        document.getElementById("weather").innerHTML = "Zunaj: " + Math.round(t) + "°C";
+      } catch(e){}
+    }
+  };
+  xhr.send();
+}
+
 function start(){
   tick();
   setInterval(tick, 1000);
   load();
   setInterval(load, REFRESH_MS);
+  loadWeather();
+  setInterval(loadWeather, WEATHER_MS);
 }
 </script>
 </body>
