@@ -89,7 +89,7 @@
 // 1) PASSWORD: store only the SHA-256 hash, never the plain password.
 //    Demo password is "ep2026". Replace PW_HASH with your own:
 //    crypto.subtle.digest('SHA-256', new TextEncoder().encode('YOURPASS')).then(b=>console.log([...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')))
-const PW_HASH = "893df7a5bbed622c448894bed54812dc03ea03b2a3fcd5610472ec4d887c5d3a";
+const PW_HASH = "025e2a84c73bd01f486106da1cbc42449395127ba0053fe3ca78457e2b9fa360";
 
 // 2) SECRET URL: opening  ...index.html?k=YOUR_SECRET  auto-unlocks (for the TV).
 const URL_SECRET = "change-this-to-a-long-random-string";
