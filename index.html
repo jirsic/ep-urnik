@@ -3,179 +3,191 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Urnik EFŠ KSO F4</title>
+<title>Urnik posegov — EP laboratorij</title>
 <style>
-  :root {
-    --bg: #0d1b2a; --panel: #16263a; --panel-2: #1b2f47; --line: #2c445f;
-    --ink: #eaf2fb; --ink-dim: #9fb6cf; --accent: #37b7c3; --study: #f2b134; --today: #37b7c3;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { height: 100%; }
-  body {
-    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-    background: var(--bg); color: var(--ink);
-    display: flex; flex-direction: column; min-height: 100vh;
-  }
-  #lock {
-    position: fixed; inset: 0; background: var(--bg);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 18px; z-index: 100;
-  }
-  #lock h2 { font-size: 24px; font-weight: 700; }
-  #lock p { color: var(--ink-dim); font-size: 15px; }
-  #lock input {
-    background: var(--panel); color: var(--ink); border: 1px solid var(--line);
-    border-radius: 8px; padding: 12px 16px; font-size: 18px; width: 260px; text-align: center;
-  }
-  #lock button {
-    background: var(--accent); color: #062028; border: none; border-radius: 8px;
-    padding: 12px 28px; font-size: 16px; font-weight: 700; cursor: pointer;
-  }
-  #lock .err { color: #ff9b9b; font-size: 14px; min-height: 18px; }
-  #app { display: none; flex: 1; flex-direction: column; }
-  body.unlocked #lock { display: none; }
-  body.unlocked #app { display: flex; }
-  .board { flex: 1; padding: 28px 40px 40px; }
-  .board-head {
-    display: flex; justify-content: space-between; align-items: baseline;
-    margin-bottom: 22px; border-bottom: 2px solid var(--accent); padding-bottom: 14px;
-  }
-  .board-head h1 { font-size: clamp(24px, 2.6vw, 42px); font-weight: 700; letter-spacing: .5px; }
-  .board-head .now { font-size: clamp(15px, 1.4vw, 24px); color: var(--ink-dim); }
-  .days { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
-  .day { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
-  .day.is-today { border-color: var(--today); box-shadow: 0 0 0 2px rgba(55,183,195,.4); }
-  .day-head { padding: 14px 18px; background: var(--panel-2); display: flex; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--line); }
-  .day-head .dow { font-size: clamp(18px, 1.5vw, 26px); font-weight: 700; text-transform: capitalize; }
-  .day-head .date { font-size: clamp(14px, 1.1vw, 18px); color: var(--ink-dim); }
-  .day-head .badge-today { margin-left: auto; font-size: 12px; font-weight: 700; color: #062028; background: var(--today); padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: .5px; }
-  .cases { list-style: none; padding: 6px 0; }
-  .case { display: flex; gap: 14px; padding: 12px 18px; align-items: baseline; border-bottom: 1px solid rgba(44,68,95,.5); }
-  .case:last-child { border-bottom: none; }
-  .case .num { font-size: clamp(16px, 1.3vw, 22px); font-weight: 700; color: var(--accent); min-width: 1.4em; }
-  .case .body { flex: 1; }
-  .case .name { font-size: clamp(17px, 1.4vw, 25px); font-weight: 700; margin-bottom: 2px; }
-  .case .desc { font-size: clamp(14px, 1.1vw, 19px); color: var(--ink-dim); line-height: 1.35; }
-  .case.study { background: rgba(242,177,52,.08); }
-  .case.study .tag { display: inline-block; font-size: 11px; font-weight: 700; color: #2a1e00; background: var(--study); padding: 2px 8px; border-radius: 4px; margin-left: 8px; letter-spacing: .5px; vertical-align: middle; }
-  .state { padding: 60px 20px; text-align: center; color: var(--ink-dim); font-size: 20px; }
-  .state.err { color: #ff9b9b; }
-  .updated { text-align: right; color: var(--ink-dim); font-size: 13px; margin-top: 20px; opacity: .7; }
+  body { font-family: "Segoe UI", Arial, sans-serif; background: #0d1b2a; color: #eaf2fb; margin: 0; padding: 0; }
+  #lock { position: fixed; top:0; left:0; right:0; bottom:0; background:#0d1b2a; text-align:center; padding-top:18%; }
+  #lock input { background:#16263a; color:#eaf2fb; border:1px solid #2c445f; border-radius:8px; padding:12px 16px; font-size:18px; width:260px; text-align:center; }
+  #lock button { background:#37b7c3; color:#062028; border:none; border-radius:8px; padding:12px 28px; font-size:16px; font-weight:bold; cursor:pointer; margin-top:14px; }
+  #lock .err { color:#ff9b9b; font-size:14px; margin-top:10px; height:18px; }
+  #app { display:none; }
+  .board { padding: 24px 32px 40px; }
+  .board-head { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:20px; border-bottom:2px solid #37b7c3; padding-bottom:12px; }
+  .board-head h1 { font-size:34px; font-weight:bold; margin:0; }
+  .board-head .now { font-size:20px; color:#9fb6cf; }
+  .days { display:block; }
+  .day { display:inline-block; vertical-align:top; width:31%; min-width:300px; margin:0 1% 22px 0; background:#16263a; border:1px solid #2c445f; border-radius:12px; overflow:hidden; }
+  .day.is-today { border-color:#37b7c3; }
+  .day-head { padding:14px 18px; background:#1b2f47; border-bottom:1px solid #2c445f; }
+  .day-head .dow { font-size:24px; font-weight:bold; }
+  .day-head .date { font-size:16px; color:#9fb6cf; margin-left:10px; }
+  .day-head .badge-today { float:right; font-size:12px; font-weight:bold; color:#062028; background:#37b7c3; padding:3px 10px; border-radius:20px; }
+  .cases { list-style:none; padding:6px 0; margin:0; }
+  .case { padding:12px 18px; border-bottom:1px solid rgba(44,68,95,0.5); }
+  .case .num { font-size:20px; font-weight:bold; color:#37b7c3; margin-right:12px; }
+  .case .name { font-size:23px; font-weight:bold; }
+  .case .desc { font-size:18px; color:#9fb6cf; margin-top:2px; }
+  .case.study { background:rgba(242,177,52,0.08); }
+  .case.study .tag { display:inline-block; font-size:11px; font-weight:bold; color:#2a1e00; background:#f2b134; padding:2px 8px; border-radius:4px; margin-left:8px; }
+  .state { padding:60px 20px; text-align:center; color:#9fb6cf; font-size:20px; }
+  .updated { text-align:right; color:#9fb6cf; font-size:13px; margin-top:20px; }
 </style>
 </head>
 <body>
 
 <div id="lock">
   <h2>Urnik posegov — EP laboratorij</h2>
-  <p>Vnesi geslo za prikaz urnika.</p>
-  <input id="pw" type="password" placeholder="Geslo" autocomplete="current-password">
+  <p style="color:#9fb6cf;">Vnesi geslo za prikaz urnika.</p>
+  <div><input id="pw" type="password" placeholder="Geslo"></div>
   <button onclick="tryUnlock()">Odkleni</button>
   <div class="err" id="lockErr"></div>
 </div>
 
 <div id="app">
-  <main class="board">
+  <div class="board">
     <div class="board-head">
       <h1>Urnik posegov — EP laboratorij</h1>
       <div class="now" id="clock"></div>
     </div>
     <div class="days" id="days"><div class="state">Nalagam urnik…</div></div>
     <div class="updated" id="updated"></div>
-  </main>
+  </div>
 </div>
 
 <script>
-// ========================= CONFIG =========================
-// 1) PASSWORD: store only the SHA-256 hash, never the plain password.
-//    Demo password is "ep2026". Replace PW_HASH with your own:
-//    crypto.subtle.digest('SHA-256', new TextEncoder().encode('YOURPASS')).then(b=>console.log([...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')))
-const PW_HASH = "025e2a84c73bd01f486106da1cbc42449395127ba0053fe3ca78457e2b9fa360";
+// ================= CONFIG =================
+// Plain-text password (old TV browsers can't hash). Keep it simple; this is a
+// light gate for anonymized data, not real security.
+var PASSWORD = "ep2026";
+// Secret for the TV auto-unlock URL:  ...index.html?k=YOUR_SECRET
+var URL_SECRET = "change-this-to-a-long-random-string";
+var SCHEDULE_URL = "schedule.txt";
+var REFRESH_MS = 5 * 60 * 1000;
+var COOKIE_DAYS = 365;
+// =========================================
 
-// 2) SECRET URL: opening  ...index.html?k=YOUR_SECRET  auto-unlocks (for the TV).
-const URL_SECRET = "F4urnik";
+var DOW = ["Nedelja","Ponedeljek","Torek","Sreda","Četrtek","Petek","Sobota"];
+var MON = ["januar","februar","marec","april","maj","junij","julij","avgust","september","oktober","november","december"];
 
-// 3) Data file. May be plain text or base64-wrapped (auto-detected).
-const SCHEDULE_URL = "schedule.txt";
-const REFRESH_MS = 5 * 60 * 1000;
-const COOKIE_DAYS = 365;
-// ==========================================================
-
-async function sha256hex(s){
-  const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
-  return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('');
+function setCookie(v){
+  var d = new Date();
+  d.setTime(d.getTime() + COOKIE_DAYS*24*60*60*1000);
+  document.cookie = "epk=" + v + ";expires=" + d.toUTCString() + ";path=/";
 }
-function setCookie(v){ const d=new Date(); d.setTime(d.getTime()+COOKIE_DAYS*864e5); document.cookie=`epk=${v};expires=${d.toUTCString()};path=/;SameSite=Lax`; }
-function getCookie(){ return document.cookie.split('; ').find(c=>c.startsWith('epk='))?.split('=')[1]; }
-function unlock(){ document.body.classList.add('unlocked'); start(); }
-
-async function tryUnlock(){
-  const val = document.getElementById('pw').value;
-  if (await sha256hex(val) === PW_HASH){ setCookie(PW_HASH); unlock(); }
-  else document.getElementById('lockErr').textContent = "Napačno geslo.";
+function getCookie(){
+  var parts = document.cookie.split("; ");
+  for (var i=0;i<parts.length;i++){ if (parts[i].indexOf("epk=")===0) return parts[i].substring(4); }
+  return "";
 }
-document.getElementById('pw').addEventListener('keydown', e=>{ if(e.key==='Enter') tryUnlock(); });
+function unlock(){
+  document.getElementById("lock").style.display = "none";
+  document.getElementById("app").style.display = "block";
+  start();
+}
+function tryUnlock(){
+  var val = document.getElementById("pw").value;
+  if (val === PASSWORD){ setCookie("ok"); unlock(); }
+  else document.getElementById("lockErr").innerHTML = "Napačno geslo.";
+}
 
-(function gate(){
-  const params = new URLSearchParams(location.search);
-  if (params.get('k') === URL_SECRET){ setCookie(PW_HASH); unlock(); return; }
-  if (getCookie() === PW_HASH){ unlock(); return; }
+// gate on load
+(function(){
+  var q = window.location.search;
+  if (q.indexOf("k=" + URL_SECRET) > -1){ setCookie("ok"); unlock(); return; }
+  if (getCookie() === "ok"){ unlock(); return; }
 })();
 
-const DOW = ["Nedelja","Ponedeljek","Torek","Sreda","Četrtek","Petek","Sobota"];
-const MON = ["januar","februar","marec","april","maj","junij","julij","avgust","september","oktober","november","december"];
-const dateRe = /(\d{1,2})\s*\.\s*(\d{1,2})\s*\.\s*(\d{4})/;
+function pad(x){ return (x<10?"0":"") + x; }
 
-function decodeData(raw){
-  const t = raw.trim();
-  if (/^[A-Za-z0-9+/=\s]+$/.test(t) && t.length % 4 === 0 && !dateRe.test(t.slice(0,40))){
-    try { return decodeURIComponent(escape(atob(t.replace(/\s/g,'')))); } catch(e){}
-  }
-  return raw;
+function parseDate(line){
+  var m = line.match(/(\d{1,2})\s*\.\s*(\d{1,2})\s*\.\s*(\d{4})/);
+  if (!m) return null;
+  return new Date(parseInt(m[3],10), parseInt(m[2],10)-1, parseInt(m[1],10));
 }
-function parse(text){
-  const days=[]; let cur=null;
-  text.split(/\r?\n/).forEach(raw=>{
-    const line=raw.trim(); if(!line) return;
-    const m=line.match(dateRe);
-    if(m){ cur={date:new Date(+m[3],+m[2]-1,+m[1]),cases:[]}; days.push(cur); }
-    else if(cur){ const i=line.indexOf(';'); let n=line,d=''; if(i>-1){n=line.slice(0,i).trim();d=line.slice(i+1).trim();} cur.cases.push({name:n,desc:d,study:/študija/i.test(line)}); }
-  });
-  return days;
+function esc(s){
+  return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 }
-function sameDay(a,b){ return a.getFullYear()===b.getFullYear()&&a.getMonth()===b.getMonth()&&a.getDate()===b.getDate(); }
-function esc(s){ return s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+function sameDay(a,b){
+  return a.getFullYear()===b.getFullYear() && a.getMonth()===b.getMonth() && a.getDate()===b.getDate();
+}
 
 function render(text){
-  const days=parse(text), host=document.getElementById('days');
-  if(!days.length){ host.innerHTML='<div class="state">Ni prepoznanih dni v urniku.</div>'; return; }
-  const today=new Date();
-  host.innerHTML=days.map(day=>{
-    const isToday=sameDay(day.date,today), dow=DOW[day.date.getDay()];
-    const dateStr=`${day.date.getDate()}. ${MON[day.date.getMonth()]} ${day.date.getFullYear()}`;
-    const cases=day.cases.map((c,i)=>`
-      <li class="case ${c.study?'study':''}"><span class="num">${i+1}</span>
-        <div class="body"><div class="name">${esc(c.name)}${c.study?'<span class="tag">ŠTUDIJA</span>':''}</div>
-        ${c.desc?`<div class="desc">${esc(c.desc)}</div>`:''}</div></li>`).join('');
-    return `<section class="day ${isToday?'is-today':''}">
-      <div class="day-head"><span class="dow">${dow}</span><span class="date">${dateStr}</span>
-      ${isToday?'<span class="badge-today">Danes</span>':''}</div>
-      <ul class="cases">${cases||'<li class="case"><div class="body"><div class="desc">— ni posegov —</div></div></li>'}</ul></section>`;
-  }).join('');
-}
-async function load(){
-  try{
-    const res=await fetch(SCHEDULE_URL+"?t="+Date.now(),{cache:"no-store"});
-    if(!res.ok) throw new Error("HTTP "+res.status);
-    render(decodeData(await res.text()));
-    const n=new Date(), p=x=>String(x).padStart(2,'0');
-    document.getElementById('updated').textContent=`Osveženo ob ${p(n.getHours())}:${p(n.getMinutes())}`;
-  }catch(e){
-    document.getElementById('days').innerHTML=`<div class="state err">Urnika ni bilo mogoče naložiti (${esc(String(e.message||e))}).</div>`;
+  var lines = text.split(/\r?\n/);
+  var days = [];
+  var cur = null;
+  for (var i=0;i<lines.length;i++){
+    var line = lines[i].replace(/^\s+|\s+$/g,"");
+    if (!line) continue;
+    var d = parseDate(line);
+    if (d){ cur = { date:d, cases:[] }; days.push(cur); }
+    else if (cur){
+      var idx = line.indexOf(";");
+      var name = line, desc = "";
+      if (idx > -1){ name = line.substring(0,idx).replace(/^\s+|\s+$/g,""); desc = line.substring(idx+1).replace(/^\s+|\s+$/g,""); }
+      var study = /študija/i.test(line);
+      cur.cases.push({ name:name, desc:desc, study:study });
+    }
   }
+  var host = document.getElementById("days");
+  if (!days.length){ host.innerHTML = '<div class="state">Ni prepoznanih dni v urniku.</div>'; return; }
+  var today = new Date();
+  var html = "";
+  for (var j=0;j<days.length;j++){
+    var day = days[j];
+    var isToday = sameDay(day.date, today);
+    var dateStr = day.date.getDate() + ". " + MON[day.date.getMonth()] + " " + day.date.getFullYear();
+    var cs = "";
+    if (day.cases.length === 0){
+      cs = '<li class="case"><div class="desc">— ni posegov —</div></li>';
+    } else {
+      for (var k=0;k<day.cases.length;k++){
+        var c = day.cases[k];
+        cs += '<li class="case' + (c.study?" study":"") + '">' +
+              '<span class="num">' + (k+1) + '</span>' +
+              '<span class="name">' + esc(c.name) + (c.study?'<span class="tag">ŠTUDIJA</span>':'') + '</span>' +
+              (c.desc?('<div class="desc">' + esc(c.desc) + '</div>'):'') +
+              '</li>';
+      }
+    }
+    html += '<div class="day' + (isToday?" is-today":"") + '">' +
+            '<div class="day-head"><span class="dow">' + DOW[day.date.getDay()] + '</span>' +
+            '<span class="date">' + dateStr + '</span>' +
+            (isToday?'<span class="badge-today">Danes</span>':'') + '</div>' +
+            '<ul class="cases">' + cs + '</ul></div>';
+  }
+  host.innerHTML = html;
 }
-function tick(){ const n=new Date(),p=x=>String(x).padStart(2,'0');
-  document.getElementById('clock').textContent=`${DOW[n.getDay()]}, ${n.getDate()}.${n.getMonth()+1}.${n.getFullYear()}  ${p(n.getHours())}:${p(n.getMinutes())}`; }
-function start(){ setInterval(tick,1000); tick(); load(); setInterval(load,REFRESH_MS); }
+
+function load(){
+  var xhr = new XMLHttpRequest();
+  var url = SCHEDULE_URL + "?t=" + (new Date()).getTime();
+  xhr.open("GET", url, true);
+  xhr.onreadystatechange = function(){
+    if (xhr.readyState === 4){
+      if (xhr.status === 200 || xhr.status === 0){
+        render(xhr.responseText);
+        var n = new Date();
+        document.getElementById("updated").innerHTML = "Osveženo ob " + pad(n.getHours()) + ":" + pad(n.getMinutes());
+      } else {
+        document.getElementById("days").innerHTML = '<div class="state">Napaka pri nalaganju (' + xhr.status + ').</div>';
+      }
+    }
+  };
+  xhr.send();
+}
+
+function tick(){
+  var n = new Date();
+  document.getElementById("clock").innerHTML =
+    DOW[n.getDay()] + ", " + n.getDate() + "." + (n.getMonth()+1) + "." + n.getFullYear() + "  " + pad(n.getHours()) + ":" + pad(n.getMinutes());
+}
+
+function start(){
+  tick();
+  setInterval(tick, 1000);
+  load();
+  setInterval(load, REFRESH_MS);
+}
 </script>
 </body>
 </html>
