@@ -16,6 +16,8 @@
   .board-head h1 { font-size:34px; font-weight:bold; margin:0; }
   .board-head .now { font-size:20px; color:#9fb6cf; }
   .board-head #weather { margin-right:18px; color:#37b7c3; }
+  .board-head #traffic { margin-right:18px; color:#9fb6cf; }
+  .board-head #traffic .tstat { font-weight:bold; }
   .board-head #wicon { display:inline-block; vertical-align:middle; margin-right:8px; }
   .board-head #wicon svg { vertical-align:middle; }
   .board-head #wtemp { vertical-align:middle; }
@@ -55,7 +57,7 @@
   <div class="board">
     <div class="board-head">
       <h1>Urnik posegov — EP laboratorij</h1>
-      <div class="now"><span id="weather"><span id="wicon"></span><span id="wtemp"></span></span><span id="clock"></span></div>
+      <div class="now"><span id="traffic"></span><span id="weather"><span id="wicon"></span><span id="wtemp"></span></span><span id="clock"></span></div>
     </div>
     <div class="days" id="days"><div class="state">Nalagam urnik…</div></div>
     <div class="updated" id="updated"></div>
@@ -128,6 +130,21 @@ function sameDay(a,b){
 }
 
 function render(text){
+  // Pull out an optional traffic line (starts with "Promet") for the header.
+  // Example line in schedule.txt:  Promet A1 LJ-KP: pretočno
+  var trafficText = "";
+  var lines0 = text.split(/\r?\n/);
+  var kept = [];
+  for (var t0=0;t0<lines0.length;t0++){
+    if (/^\s*promet\b/i.test(lines0[t0])){
+      trafficText = lines0[t0].replace(/^\s*promet\s*/i,"").replace(/^\s+|\s+$/g,"");
+    } else {
+      kept.push(lines0[t0]);
+    }
+  }
+  text = kept.join("\n");
+  updateTraffic(trafficText);
+
   // Split off the "Zadnje naročilo" section for the ticker.
   // Everything from that line onward goes to the bottom scroll bar;
   // everything before it is the schedule board.
@@ -291,6 +308,21 @@ function loadWeather(){
     }
   };
   xhr.send();
+}
+
+function updateTraffic(text){
+  var el = document.getElementById("traffic");
+  if (!el) return;
+  if (text){
+    // Color the status: green-ish if "pretočno", amber if a jam word appears.
+    var cls = "tstat";
+    var color = "#3ec97a"; // flowing = green
+    if (/zastoj|zapora|nesreč|kolona|oviran/i.test(text)) color = "#f2b134"; // amber
+    el.innerHTML = 'Promet: <span class="' + cls + '" style="color:' + color + '">' + esc(text) + '</span>';
+    el.style.display = "inline";
+  } else {
+    el.style.display = "none";
+  }
 }
 
 function updateTicker(label, body){
