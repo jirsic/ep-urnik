@@ -35,6 +35,10 @@
   .case.study .tag { display:inline-block; font-size:11px; font-weight:bold; color:#2a1e00; background:#f2b134; padding:2px 8px; border-radius:4px; margin-left:8px; }
   .state { padding:60px 20px; text-align:center; color:#9fb6cf; font-size:20px; }
   .updated { text-align:right; color:#9fb6cf; font-size:13px; margin-top:20px; }
+  .board { padding-bottom: 70px; }
+  #ticker { position:fixed; left:0; right:0; bottom:0; height:48px; line-height:48px; background:#37b7c3; color:#062028; font-size:22px; font-weight:bold; overflow:hidden; display:flex; }
+  #tickerLabel { flex:0 0 auto; padding:0 16px; background:#2596a0; white-space:nowrap; }
+  #ticker marquee { flex:1 1 auto; height:48px; }
 </style>
 </head>
 <body>
@@ -56,6 +60,7 @@
     <div class="days" id="days"><div class="state">Nalagam urnik…</div></div>
     <div class="updated" id="updated"></div>
   </div>
+  <div id="ticker"><span id="tickerLabel"></span><marquee id="tickerText" scrollamount="6" behavior="scroll" direction="left"></marquee></div>
 </div>
 
 <script>
@@ -72,6 +77,9 @@ var COOKIE_DAYS = 365;
 var WEATHER_LAT = 46.05;
 var WEATHER_LON = 14.51;
 var WEATHER_MS = 10 * 60 * 1000; // refresh weather every 10 min
+// Ticker text at the bottom. Edit this line to change the scrolling message.
+// Leave as "" to auto-build it from today's cases instead.
+var TICKER_TEXT = "Dobrodošli v EP laboratoriju  •  Za vprašanja pokličite interno številko  •  Lep dan!";
 // =========================================
 
 var DOW = ["Nedelja","Ponedeljek","Torek","Sreda","Četrtek","Petek","Sobota"];
@@ -120,6 +128,28 @@ function sameDay(a,b){
 }
 
 function render(text){
+  // Split off the "Zadnje naročilo" section for the ticker.
+  // Everything from that line onward goes to the bottom scroll bar;
+  // everything before it is the schedule board.
+  var tickerLabel = "";
+  var tickerBody = "";
+  var splitRe = /zadnje\s+naročilo\s*:?/i;
+  var mSplit = text.match(splitRe);
+  if (mSplit){
+    var cut = text.search(splitRe);
+    var after = text.substring(cut);           // "Zadnje naročilo: ...."
+    text = text.substring(0, cut);             // schedule portion only
+    // Separate the label from the rolling body
+    var colon = after.indexOf(":");
+    if (colon > -1){
+      tickerLabel = after.substring(0, colon+1).replace(/\s+/g," ").replace(/^\s+|\s+$/g,"");
+      tickerBody = after.substring(colon+1).replace(/\s+/g," ").replace(/^\s+|\s+$/g,"");
+    } else {
+      tickerBody = after.replace(/\s+/g," ").replace(/^\s+|\s+$/g,"");
+    }
+  }
+  updateTicker(tickerLabel, tickerBody);
+
   var lines = text.split(/\r?\n/);
   var days = [];
   var cur = null;
@@ -137,16 +167,40 @@ function render(text){
     }
   }
   var host = document.getElementById("days");
-  if (!days.length){ host.innerHTML = '<div class="state">Ni prepoznanih dni v urniku.</div>'; return; }
   var today = new Date();
+
+  // Build a fixed Monday–Friday frame for the week of the file's dates.
+  // Anchor: earliest date found in the file; if none, use the current week.
+  var anchor = null;
+  for (var a=0;a<days.length;a++){
+    if (!anchor || days[a].date < anchor) anchor = days[a].date;
+  }
+  if (!anchor) anchor = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+  // Find Monday of the anchor's week (getDay: 0=Sun..6=Sat)
+  var dow = anchor.getDay();
+  var deltaToMon = (dow === 0) ? -6 : (1 - dow);
+  var monday = new Date(anchor.getFullYear(), anchor.getMonth(), anchor.getDate() + deltaToMon);
+
+  // Create Mon..Fri slots and match any parsed day onto them by date
+  var week = [];
+  for (var s=0;s<5;s++){
+    var slotDate = new Date(monday.getFullYear(), monday.getMonth(), monday.getDate() + s);
+    var matched = null;
+    for (var m2=0;m2<days.length;m2++){
+      if (sameDay(days[m2].date, slotDate)){ matched = days[m2]; break; }
+    }
+    week.push({ date: slotDate, cases: matched ? matched.cases : [] });
+  }
+
   var html = "";
-  for (var j=0;j<days.length;j++){
-    var day = days[j];
+  for (var j=0;j<week.length;j++){
+    var day = week[j];
     var isToday = sameDay(day.date, today);
     var dateStr = day.date.getDate() + ". " + MON[day.date.getMonth()] + " " + day.date.getFullYear();
     var cs = "";
     if (day.cases.length === 0){
-      cs = '<li class="case"><div class="desc">— ni posegov —</div></li>';
+      cs = '<li class="case"><div class="desc">Ni predvidenih posegov</div></li>';
     } else {
       for (var k=0;k<day.cases.length;k++){
         var c = day.cases[k];
@@ -237,6 +291,21 @@ function loadWeather(){
     }
   };
   xhr.send();
+}
+
+function updateTicker(label, body){
+  var lblEl = document.getElementById("tickerLabel");
+  var txtEl = document.getElementById("tickerText");
+  if (!lblEl || !txtEl) return;
+  if (body){
+    lblEl.innerHTML = label ? esc(label) : "";
+    lblEl.style.display = label ? "block" : "none";
+    txtEl.innerHTML = esc(body);
+  } else {
+    // No "Zadnje naročilo" section in the file -> show the fallback message
+    lblEl.style.display = "none";
+    txtEl.innerHTML = esc(TICKER_TEXT);
+  }
 }
 
 function start(){
