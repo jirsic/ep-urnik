@@ -35,6 +35,10 @@
   .case .desc { font-size:18px; color:#9fb6cf; margin-top:2px; }
   .case.study { background:rgba(242,177,52,0.08); }
   .case.study .tag { display:inline-block; font-size:11px; font-weight:bold; color:#2a1e00; background:#f2b134; padding:2px 8px; border-radius:4px; margin-left:8px; }
+  .staff { padding:8px 18px 4px; display:block; }
+  .staff .chip { display:inline-block; min-width:26px; height:26px; line-height:26px; text-align:center; border-radius:13px; color:#fff; font-size:13px; font-weight:bold; margin-right:5px; padding:0 5px; vertical-align:middle; }
+  .staff .chipsep { display:inline-block; width:1px; height:20px; background:#2c445f; margin:0 8px 0 3px; vertical-align:middle; }
+  .case .sysbadge { display:inline-block; min-width:20px; height:20px; line-height:20px; text-align:center; border-radius:4px; color:#fff; font-size:13px; font-weight:bold; margin-right:8px; vertical-align:middle; }
   .state { padding:60px 20px; text-align:center; color:#9fb6cf; font-size:20px; }
   .updated { text-align:right; color:#9fb6cf; font-size:13px; margin-top:20px; }
   .board { padding-bottom: 70px; }
@@ -81,8 +85,46 @@ var WEATHER_LON = 14.51;
 var WEATHER_MS = 10 * 60 * 1000; // refresh weather every 10 min
 // Ticker text at the bottom. Edit this line to change the scrolling message.
 // Leave as "" to auto-build it from today's cases instead.
-var TICKER_TEXT = "LOREM IPSUM";
+var TICKER_TEXT = "Dobrodošli v EP laboratoriju  •  Za vprašanja pokličite interno številko  •  Lep dan!";
+// System letter -> color (manufacturer palette):
+// C=CARTO (orange), X=NavX/EnSite (Abbott blue), A=Affera (Medtronic navy), R=Rhythmia/Opal (Boston blue)
+var SYS_COLORS = { "C":"#e0892e", "X":"#4b9cdf", "A":"#1b1060", "R":"#284d84" };
 // =========================================
+
+// Parse "AN#e0892e, MK#4b9cdf | TŽ#1b1060 | Nok#284d84" into groups of {initials,color}
+function parseStaff(s){
+  var groups = s.split("|");
+  var out = [];
+  for (var g=0; g<groups.length; g++){
+    var people = groups[g].split(",");
+    var arr = [];
+    for (var p=0; p<people.length; p++){
+      var item = people[p].replace(/^\s+|\s+$/g,"");
+      if (!item) continue;
+      var h = item.indexOf("#");
+      var initials = h>-1 ? item.substring(0,h).replace(/^\s+|\s+$/g,"") : item;
+      var color = h>-1 ? "#"+item.substring(h+1).replace(/[^0-9a-fA-F]/g,"") : "#666";
+      if (initials) arr.push({ initials:initials, color:color });
+    }
+    if (arr.length) out.push(arr);
+  }
+  return out;
+}
+
+// Render staff as rows of colored circles
+function renderStaff(groups){
+  if (!groups || !groups.length) return "";
+  var html = '<div class="staff">';
+  for (var g=0; g<groups.length; g++){
+    for (var p=0; p<groups[g].length; p++){
+      var person = groups[g][p];
+      html += '<span class="chip" style="background:' + person.color + '">' + esc(person.initials) + '</span>';
+    }
+    if (g < groups.length-1) html += '<span class="chipsep"></span>';
+  }
+  html += '</div>';
+  return html;
+}
 
 var DOW = ["Nedelja","Ponedeljek","Torek","Sreda","Četrtek","Petek","Sobota"];
 var MON = ["januar","februar","marec","april","maj","junij","julij","avgust","september","oktober","november","december"];
@@ -174,13 +216,22 @@ function render(text){
     var line = lines[i].replace(/^\s+|\s+$/g,"");
     if (!line) continue;
     var d = parseDate(line);
-    if (d){ cur = { date:d, cases:[] }; days.push(cur); }
+    if (d){ cur = { date:d, cases:[], staff:null }; days.push(cur); }
     else if (cur){
+      // Staff line: "@osebje: AN#e0892e, MK#4b9cdf | TŽ#1b1060 | Nok#284d84"
+      if (/^@osebje\s*:/i.test(line)){
+        cur.staff = parseStaff(line.replace(/^@osebje\s*:/i,""));
+        continue;
+      }
       var idx = line.indexOf(";");
       var name = line, desc = "";
       if (idx > -1){ name = line.substring(0,idx).replace(/^\s+|\s+$/g,""); desc = line.substring(idx+1).replace(/^\s+|\s+$/g,""); }
+      // System tag: "Iztok M. [C]" -> system letter C, name without the tag
+      var sys = "";
+      var tagM = name.match(/\[([CXAR])\]\s*$/i);
+      if (tagM){ sys = tagM[1].toUpperCase(); name = name.replace(/\[([CXAR])\]\s*$/i,"").replace(/^\s+|\s+$/g,""); }
       var study = /študija/i.test(line);
-      cur.cases.push({ name:name, desc:desc, study:study });
+      cur.cases.push({ name:name, desc:desc, study:study, sys:sys });
     }
   }
   var host = document.getElementById("days");
@@ -207,7 +258,7 @@ function render(text){
     for (var m2=0;m2<days.length;m2++){
       if (sameDay(days[m2].date, slotDate)){ matched = days[m2]; break; }
     }
-    week.push({ date: slotDate, cases: matched ? matched.cases : [] });
+    week.push({ date: slotDate, cases: matched ? matched.cases : [], staff: matched ? matched.staff : null });
   }
 
   var html = "";
@@ -221,17 +272,23 @@ function render(text){
     } else {
       for (var k=0;k<day.cases.length;k++){
         var c = day.cases[k];
-        cs += '<li class="case' + (c.study?" study":"") + '">' +
+        var sysColor = SYS_COLORS[c.sys] || "";
+        var rowStyle = sysColor ? (' style="border-left:6px solid ' + sysColor + ';"') : "";
+        var sysBadge = c.sys ? ('<span class="sysbadge" style="background:' + sysColor + '">' + c.sys + '</span>') : "";
+        cs += '<li class="case' + (c.study?" study":"") + '"' + rowStyle + '>' +
               '<span class="num">' + (k+1) + '</span>' +
+              sysBadge +
               '<span class="name">' + esc(c.name) + (c.study?'<span class="tag">ŠTUDIJA</span>':'') + '</span>' +
               (c.desc?('<div class="desc">' + esc(c.desc) + '</div>'):'') +
               '</li>';
       }
     }
+    var staffHtml = day.staff ? renderStaff(day.staff) : "";
     html += '<div class="day' + (isToday?" is-today":"") + '">' +
             '<div class="day-head"><span class="dow">' + DOW[day.date.getDay()] + '</span>' +
             '<span class="date">' + dateStr + '</span>' +
             (isToday?'<span class="badge-today">Danes</span>':'') + '</div>' +
+            staffHtml +
             '<ul class="cases">' + cs + '</ul></div>';
   }
   host.innerHTML = html;
