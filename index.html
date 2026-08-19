@@ -32,7 +32,7 @@
   .cases { list-style:none; padding:6px 0; margin:0; }
   .case { padding:12px 18px; border-bottom:1px solid rgba(44,68,95,0.5); }
   .case .num { font-size:20px; font-weight:bold; color:#37b7c3; margin-right:12px; }
-  .case .name { font-size:23px; font-weight:bold; color:rgba(255,255,255,0.82); }
+  .case .name { font-size:23px; font-weight:bold; }
   .case .desc { font-size:18px; color:#9fb6cf; margin-top:2px; }
   .case.study { background:rgba(242,177,52,0.08); }
   .case.study .tag { display:inline-block; font-size:11px; font-weight:bold; color:#2a1e00; background:#f2b134; padding:2px 8px; border-radius:4px; margin-left:8px; }
@@ -148,7 +148,7 @@ function renderStaff(groups){
       var person = groups[g][p];
       var txt = chipTextColor(person.color);
       var extra = (txt === "#12161b") ? ";border:1px solid #c3c8d0" : "";
-      html += '<span class="chip" style="background:' + person.color + ';color:' + txt + extra + '">' + esc(person.initials) + '</span>';
+      html += '<span class="chip" style="background:' + hexToRgba(person.color, 0.7) + ';color:' + txt + extra + '">' + esc(person.initials) + '</span>';
     }
     if (g < groups.length-1) html += '<span class="chipsep"></span>';
   }
