@@ -32,7 +32,7 @@
   .cases { list-style:none; padding:6px 0; margin:0; }
   .case { padding:12px 18px; border-bottom:1px solid rgba(44,68,95,0.5); }
   .case .num { font-size:20px; font-weight:bold; color:#37b7c3; margin-right:12px; }
-  .case .name { font-size:23px; font-weight:bold; }
+  .case .name { font-size:23px; font-weight:bold; color:rgba(255,255,255,0.82); }
   .case .desc { font-size:18px; color:#9fb6cf; margin-top:2px; }
   .case.study { background:rgba(242,177,52,0.08); }
   .case.study .tag { display:inline-block; font-size:11px; font-weight:bold; color:#2a1e00; background:#f2b134; padding:2px 8px; border-radius:4px; margin-left:8px; }
@@ -127,6 +127,16 @@ function chipTextColor(hex){
   // Perceived luminance; light backgrounds -> dark text
   var lum = (0.299*r + 0.587*g + 0.114*b);
   return lum > 186 ? "#12161b" : "#fff";
+}
+
+// Convert "#rrggbb" to "rgba(r,g,b,a)" for semi-transparent fills
+function hexToRgba(hex, alpha){
+  var h = (hex||"").replace("#","");
+  if (h.length !== 6) return hex;
+  var r = parseInt(h.substring(0,2),16);
+  var g = parseInt(h.substring(2,4),16);
+  var b = parseInt(h.substring(4,6),16);
+  return "rgba(" + r + "," + g + "," + b + "," + alpha + ")";
 }
 
 // Render staff as rows of colored circles
@@ -295,7 +305,7 @@ function render(text){
         var sysColor = SYS_COLORS[c.sys] || "";
         var sysName = SYS_NAMES[c.sys] || "";
         var rowStyle = sysColor ? (' style="border-left:6px solid ' + sysColor + ';"') : "";
-        var sysLabel = sysName ? ('<span class="sysname" style="background:' + sysColor + '">' + sysName + '</span>') : "";
+        var sysLabel = sysName ? ('<span class="sysname" style="background:' + hexToRgba(sysColor, 0.7) + '">' + sysName + '</span>') : "";
         cs += '<li class="case' + (c.study?" study":"") + '"' + rowStyle + '>' +
               '<div class="case-main">' +
                 '<span class="num">' + (k+1) + '</span>' +
