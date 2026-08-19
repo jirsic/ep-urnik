@@ -1,13 +1,17 @@
 Ponedeljek 17.8.2026
 @osebje: JH(#7a8ca0 | NB#e0892e, JI(#3ec97a | MT(#ffffff, MJ(#ffffff
-Jurij J.; Test
-Mojmir T.; Testiranje
+Hana S. K.; PSVT
+Melisa K.; PSVT
 Torek 18.8.2026
 @osebje: JH(#7a8ca0, ZR(#d84b4b | JI(#3ec97a, NB#e0892e | MJ(#ffffff
-Ivica M.; Test 2
-Mojmir T.; Test 3
+Iztok M.; Re-map 
+Marija T.; Recidiv AF ali pojav SVT, st.p. RFA
 Sreda 19.8.2026
 @osebje: JH(#7a8ca0, ZR(#d84b4b | JŠ(#37b7c3 | MJ(#ffffff
-Jernej T.; Test 4
+Slavica Ž.; Paroksizmalna AF
+Edvin D.; Visoko breme ventrikularne ektopije in začetna tahikardna KMP
 Četrtek 20.8.2026
+@osebje: JH(#7a8ca0, ZR(#d84b4b | JŠ(#37b7c3, JI(#3ec97a, NB#e0892e | MJ(#ffffff
+Jože K.; Persistentna preddvorna fibrilacija (HFrEF s tahikardno AF), st.p. RFA PeAF -delno (študija) - splošna anestezija
+Sead D.; PeAF (študija) - še kontrola plevralnih izlivov 
 Petek 21.8.2026
