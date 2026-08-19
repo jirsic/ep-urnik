@@ -24,10 +24,11 @@
   .days { display:block; }
   .day { display:inline-block; vertical-align:top; width:31%; min-width:300px; margin:0 1% 22px 0; background:#16263a; border:1px solid #2c445f; border-radius:12px; overflow:hidden; }
   .day.is-today { border-color:#37b7c3; }
-  .day-head { padding:14px 18px; background:#1b2f47; border-bottom:1px solid #2c445f; }
+  .day-head { padding:14px 18px; background:#1b2f47; border-bottom:1px solid #2c445f; display:flex; align-items:center; flex-wrap:wrap; }
   .day-head .dow { font-size:24px; font-weight:bold; }
   .day-head .date { font-size:16px; color:#9fb6cf; margin-left:10px; }
-  .day-head .badge-today { float:right; font-size:12px; font-weight:bold; color:#062028; background:#37b7c3; padding:3px 10px; border-radius:20px; }
+  .day-head .badge-today { margin-left:10px; font-size:12px; font-weight:bold; color:#062028; background:#37b7c3; padding:3px 10px; border-radius:20px; }
+  .day-head .staff-inline { margin-left:auto; display:flex; align-items:center; }
   .cases { list-style:none; padding:6px 0; margin:0; }
   .case { padding:12px 18px; border-bottom:1px solid rgba(44,68,95,0.5); }
   .case .num { font-size:20px; font-weight:bold; color:#37b7c3; margin-right:12px; }
@@ -35,9 +36,9 @@
   .case .desc { font-size:18px; color:#9fb6cf; margin-top:2px; }
   .case.study { background:rgba(242,177,52,0.08); }
   .case.study .tag { display:inline-block; font-size:11px; font-weight:bold; color:#2a1e00; background:#f2b134; padding:2px 8px; border-radius:4px; margin-left:8px; }
-  .staff { padding:8px 18px 4px; display:block; }
-  .staff .chip { display:inline-block; min-width:26px; height:26px; line-height:26px; text-align:center; border-radius:13px; color:#fff; font-size:13px; font-weight:bold; margin-right:5px; padding:0 5px; vertical-align:middle; }
-  .staff .chipsep { display:inline-block; width:1px; height:20px; background:#2c445f; margin:0 8px 0 3px; vertical-align:middle; }
+  .staff { display:inline-flex; align-items:center; }
+  .staff .chip { display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; color:#fff; font-size:12px; font-weight:bold; margin-left:5px; box-sizing:border-box; }
+  .staff .chipsep { display:inline-block; width:1px; height:20px; background:#2c445f; margin:0 4px 0 9px; vertical-align:middle; }
   .case .sysbadge { display:inline-block; min-width:20px; height:20px; line-height:20px; text-align:center; border-radius:4px; color:#fff; font-size:13px; font-weight:bold; margin-right:8px; vertical-align:middle; }
   .state { padding:60px 20px; text-align:center; color:#9fb6cf; font-size:20px; }
   .updated { text-align:right; color:#9fb6cf; font-size:13px; margin-top:20px; }
@@ -283,12 +284,12 @@ function render(text){
               '</li>';
       }
     }
-    var staffHtml = day.staff ? renderStaff(day.staff) : "";
+    var staffHtml = day.staff ? ('<span class="staff-inline">' + renderStaff(day.staff) + '</span>') : "";
     html += '<div class="day' + (isToday?" is-today":"") + '">' +
             '<div class="day-head"><span class="dow">' + DOW[day.date.getDay()] + '</span>' +
             '<span class="date">' + dateStr + '</span>' +
-            (isToday?'<span class="badge-today">Danes</span>':'') + '</div>' +
-            staffHtml +
+            (isToday?'<span class="badge-today">Danes</span>':'') +
+            staffHtml + '</div>' +
             '<ul class="cases">' + cs + '</ul></div>';
   }
   host.innerHTML = html;
