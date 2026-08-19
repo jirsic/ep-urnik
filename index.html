@@ -40,7 +40,7 @@
   .staff .chip { display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; color:#fff; font-size:12px; font-weight:bold; margin-left:5px; box-sizing:border-box; }
   .staff .chipsep { display:inline-block; width:1px; height:20px; background:#2c445f; margin:0 4px 0 9px; vertical-align:middle; }
   .case .case-main { display:flex; align-items:center; }
-  .case .sysname { margin-left:auto; font-size:18px; font-weight:bold; padding-left:12px; white-space:nowrap; }
+  .case .sysname { margin-left:auto; font-size:13px; font-weight:bold; color:#fff; padding:3px 10px; border-radius:6px; white-space:nowrap; }
   .state { padding:60px 20px; text-align:center; color:#9fb6cf; font-size:20px; }
   .updated { text-align:right; color:#9fb6cf; font-size:13px; margin-top:20px; }
   .board { padding-bottom: 70px; }
@@ -295,7 +295,7 @@ function render(text){
         var sysColor = SYS_COLORS[c.sys] || "";
         var sysName = SYS_NAMES[c.sys] || "";
         var rowStyle = sysColor ? (' style="border-left:6px solid ' + sysColor + ';"') : "";
-        var sysLabel = sysName ? ('<span class="sysname" style="color:' + sysColor + '">' + sysName + '</span>') : "";
+        var sysLabel = sysName ? ('<span class="sysname" style="background:' + sysColor + '">' + sysName + '</span>') : "";
         cs += '<li class="case' + (c.study?" study":"") + '"' + rowStyle + '>' +
               '<div class="case-main">' +
                 '<span class="num">' + (k+1) + '</span>' +
