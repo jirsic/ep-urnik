@@ -104,12 +104,27 @@ function parseStaff(s){
       if (!item) continue;
       var h = item.indexOf("#");
       var initials = h>-1 ? item.substring(0,h).replace(/^\s+|\s+$/g,"") : item;
+      // Strip any stray punctuation (e.g. a "(" left in from the writer format)
+      initials = initials.replace(/[()#]/g,"").replace(/^\s+|\s+$/g,"");
       var color = h>-1 ? "#"+item.substring(h+1).replace(/[^0-9a-fA-F]/g,"") : "#666";
       if (initials) arr.push({ initials:initials, color:color });
     }
     if (arr.length) out.push(arr);
   }
   return out;
+}
+
+// Decide readable text color for a chip background (dark text on light fills)
+function chipTextColor(hex){
+  var m = /^#?([0-9a-fA-F]{6})$/.exec((hex||"").replace(/^#/, "#"));
+  if (!m){ return "#fff"; }
+  var h = m[1];
+  var r = parseInt(h.substring(0,2),16);
+  var g = parseInt(h.substring(2,4),16);
+  var b = parseInt(h.substring(4,6),16);
+  // Perceived luminance; light backgrounds -> dark text
+  var lum = (0.299*r + 0.587*g + 0.114*b);
+  return lum > 186 ? "#12161b" : "#fff";
 }
 
 // Render staff as rows of colored circles
@@ -119,7 +134,9 @@ function renderStaff(groups){
   for (var g=0; g<groups.length; g++){
     for (var p=0; p<groups[g].length; p++){
       var person = groups[g][p];
-      html += '<span class="chip" style="background:' + person.color + '">' + esc(person.initials) + '</span>';
+      var txt = chipTextColor(person.color);
+      var extra = (txt === "#12161b") ? ";border:1px solid #c3c8d0" : "";
+      html += '<span class="chip" style="background:' + person.color + ';color:' + txt + extra + '">' + esc(person.initials) + '</span>';
     }
     if (g < groups.length-1) html += '<span class="chipsep"></span>';
   }
