@@ -1,13 +1,13 @@
 Ponedeljek 17.8.2026
-@osebje: JH(#7a8ca0 | NB#e0892e, JI(#3ec97a | MT(#666666, MJ(#666666
+@osebje: JH#7a8ca0 | NB#e0892e, JI#3ec97a | MT#666666, MJ#666666
 Jurij J.; Test
 Mojmir T.; Testiranje
 Torek 18.8.2026
-@osebje: JH(#7a8ca0, ZR(#d84b4b | JI(#3ec97a, NB#e0892e | MJ(#666666
+@osebje: JH#7a8ca0, ZR#d84b4b | JI#3ec97a, NB#e0892e | MJ#666666
 Ivica M.; Test 2
 Mojmir T.; Test 3
 Sreda 19.8.2026
-@osebje: JH(#7a8ca0, ZR(#d84b4b | JŠ(#37b7c3 | MJ(#666666
+@osebje: JH#7a8ca0, ZR#d84b4b | JŠ#37b7c3 | MJ#666666
 Jernej T.; Test 4
 Četrtek 20.8.2026
 Petek 21.8.2026
