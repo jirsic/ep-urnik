@@ -22,8 +22,8 @@
   .board-head #wicon svg { vertical-align:middle; }
   .board-head #wtemp { vertical-align:middle; }
   .days { display:block; }
-  .day { display:inline-block; vertical-align:top; width:31%; min-width:300px; margin:0 1% 22px 0; background:#16263a; border:1px solid #2c445f; border-radius:12px; overflow:hidden; }
-  .day.is-today { border-color:#37b7c3; }
+  .day { background:#16263a; border:1px solid #2c445f; border-radius:12px; overflow:hidden; }
+  .day.is-today { border-color:#37b7c3; border-width:2px; }
   .day-head { padding:14px 18px; background:#1b2f47; border-bottom:1px solid #2c445f; display:flex; align-items:center; flex-wrap:wrap; }
   .day-head .dow { font-size:24px; font-weight:bold; }
   .day-head .date { font-size:16px; color:#9fb6cf; margin-left:10px; }
@@ -36,6 +36,13 @@
   .case .desc { font-size:18px; color:#9fb6cf; margin-top:2px; }
   .case.study { background:rgba(242,177,52,0.08); }
   .case.study .tag { display:inline-block; font-size:11px; font-weight:bold; color:#2a1e00; background:#f2b134; padding:2px 8px; border-radius:4px; margin-left:8px; }
+  .weeknav { display:flex; align-items:center; justify-content:center; padding:8px 0 14px; gap:20px; }
+  .weeknav .wklabel { font-size:20px; font-weight:bold; color:#eaf2fb; min-width:340px; text-align:center; }
+  .weeknav .wkarrow { font-size:26px; color:#37b7c3; cursor:pointer; user-select:none; padding:2px 14px; border-radius:8px; background:rgba(55,183,195,0.12); }
+  .weeknav .wkarrow.dim { color:#3a5170; background:transparent; }
+  .weekdays { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; }
+  .weekpreview { margin-top:18px; opacity:0.4; }
+  .weekpreview .preview-label { font-size:15px; color:#9fb6cf; margin:0 0 8px 4px; font-weight:bold; }
   .staff { display:inline-flex; align-items:center; }
   .staff .chip { display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; color:#fff; font-size:12px; font-weight:bold; margin-left:5px; box-sizing:border-box; }
   .staff .chipsep { display:inline-block; width:1px; height:20px; background:#2c445f; margin:0 4px 0 9px; vertical-align:middle; }
@@ -92,6 +99,8 @@ var TICKER_TEXT = "Dobrodošli v EP laboratoriju  •  Za vprašanja pokličite 
 // C=CARTO (orange), X=NavX/EnSite (Abbott blue), A=Affera (Medtronic navy), R=Rhythmia/Opal (Boston blue)
 var SYS_COLORS = { "C":"#e0892e", "X":"#4b9cdf", "A":"#1b1060", "R":"#284d84" };
 var SYS_NAMES = { "C":"CARTO", "X":"NavX", "A":"Affera", "R":"Rhythmia" };
+// Global board state for week navigation
+var BOARD = { weeks: [], focusIdx: 0 };
 // =========================================
 
 // Parse "AN#e0892e, MK#4b9cdf | TŽ#1b1060 | Nok#284d84" into groups of {initials,color}
@@ -267,34 +276,125 @@ function render(text){
   var host = document.getElementById("days");
   var today = new Date();
 
-  // Build a fixed Monday–Friday frame for the week of the file's dates.
-  // Anchor: earliest date found in the file; if none, use the current week.
-  var anchor = null;
+  // ---- Group all parsed days into Mon–Fri weeks ----
+  // Anchor each day to its Monday; collect distinct weeks in chronological order.
+  function mondayOf(d){
+    var dw = d.getDay();
+    var delta = (dw === 0) ? -6 : (1 - dw);
+    return new Date(d.getFullYear(), d.getMonth(), d.getDate() + delta);
+  }
+
+  // Determine the span of weeks to show: from the earliest file date's week
+  // through the latest file date's week. If the file is empty, show this week.
+  var minD = null, maxD = null;
   for (var a=0;a<days.length;a++){
-    if (!anchor || days[a].date < anchor) anchor = days[a].date;
+    if (!minD || days[a].date < minD) minD = days[a].date;
+    if (!maxD || days[a].date > maxD) maxD = days[a].date;
   }
-  if (!anchor) anchor = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  if (!minD){ minD = today; maxD = today; }
 
-  // Find Monday of the anchor's week (getDay: 0=Sun..6=Sat)
-  var dow = anchor.getDay();
-  var deltaToMon = (dow === 0) ? -6 : (1 - dow);
-  var monday = new Date(anchor.getFullYear(), anchor.getMonth(), anchor.getDate() + deltaToMon);
+  var firstMon = mondayOf(minD);
+  var lastMon = mondayOf(maxD);
 
-  // Create Mon..Fri slots and match any parsed day onto them by date
-  var week = [];
-  for (var s=0;s<5;s++){
-    var slotDate = new Date(monday.getFullYear(), monday.getMonth(), monday.getDate() + s);
-    var matched = null;
-    for (var m2=0;m2<days.length;m2++){
-      if (sameDay(days[m2].date, slotDate)){ matched = days[m2]; break; }
+  // Build the list of weeks (each = array of 5 Mon–Fri slots with matched data)
+  var weeks = [];
+  var wkMon = new Date(firstMon.getFullYear(), firstMon.getMonth(), firstMon.getDate());
+  while (wkMon <= lastMon){
+    var wk = [];
+    for (var s=0;s<5;s++){
+      var slotDate = new Date(wkMon.getFullYear(), wkMon.getMonth(), wkMon.getDate() + s);
+      var matched = null;
+      for (var m2=0;m2<days.length;m2++){
+        if (sameDay(days[m2].date, slotDate)){ matched = days[m2]; break; }
+      }
+      wk.push({ date: slotDate, cases: matched ? matched.cases : [], staff: matched ? matched.staff : null });
     }
-    week.push({ date: slotDate, cases: matched ? matched.cases : [], staff: matched ? matched.staff : null });
+    weeks.push({ monday: new Date(wkMon.getFullYear(), wkMon.getMonth(), wkMon.getDate()), days: wk });
+    wkMon = new Date(wkMon.getFullYear(), wkMon.getMonth(), wkMon.getDate() + 7);
   }
 
+  // ---- Pick the focused week: the one containing today, else the first ----
+  var todayMon = mondayOf(today);
+  var focusIdx = 0;
+  for (var w=0; w<weeks.length; w++){
+    if (sameDay(weeks[w].monday, todayMon)){ focusIdx = w; break; }
+  }
+  // If today is before all weeks, focus the first; if after all, focus the last.
+  if (today > maxD) focusIdx = weeks.length - 1;
+
+  // Store globally so the arrow keys can change focus and re-render.
+  BOARD.weeks = weeks;
+  BOARD.focusIdx = focusIdx;
+  renderWeeks();
+}
+
+// Render the focused week full-size plus the next week as a faded preview.
+function renderWeeks(){
+  var host = document.getElementById("days");
+  var weeks = BOARD.weeks;
+  if (!weeks || !weeks.length){ host.innerHTML = ""; return; }
+
+  var idx = BOARD.focusIdx;
+  if (idx < 0) idx = 0;
+  if (idx > weeks.length-1) idx = weeks.length-1;
+  BOARD.focusIdx = idx;
+
+  var today = new Date();
   var html = "";
+
+  // Week navigation header (arrows + week label)
+  var focusWeek = weeks[idx];
+  var wkStart = focusWeek.days[0].date;
+  var wkEnd = focusWeek.days[4].date;
+  var label = wkStart.getDate() + ". " + MON[wkStart.getMonth()] + " – " +
+              wkEnd.getDate() + ". " + MON[wkEnd.getMonth()] + " " + wkEnd.getFullYear();
+  var leftDim = (idx <= 0) ? " dim" : "";
+  var rightDim = (idx >= weeks.length-1) ? " dim" : "";
+  html += '<div class="weeknav">' +
+          '<span class="wkarrow' + leftDim + '" id="wkPrev">&#9664;</span>' +
+          '<span class="wklabel">' + label + '</span>' +
+          '<span class="wkarrow' + rightDim + '" id="wkNext">&#9654;</span>' +
+          '</div>';
+
+  // Focused week — full opacity
+  html += '<div class="weekblock">' + renderWeekDays(focusWeek.days, today, false) + '</div>';
+
+  // Next week preview — faded (only if one exists)
+  if (idx < weeks.length-1){
+    var nextWeek = weeks[idx+1];
+    var ns = nextWeek.days[0].date, ne = nextWeek.days[4].date;
+    var nlabel = "Naslednji teden: " + ns.getDate() + ". " + MON[ns.getMonth()] + " – " +
+                 ne.getDate() + ". " + MON[ne.getMonth()] + " " + ne.getFullYear();
+    html += '<div class="weekpreview">' +
+            '<div class="preview-label">' + nlabel + '</div>' +
+            renderWeekDays(nextWeek.days, today, true) +
+            '</div>';
+  }
+
+  host.innerHTML = html;
+
+  // Wire arrow clicks (keyboard handled separately)
+  var prev = document.getElementById("wkPrev");
+  var next = document.getElementById("wkNext");
+  if (prev) prev.onclick = function(){ shiftWeek(-1); };
+  if (next) next.onclick = function(){ shiftWeek(1); };
+}
+
+function shiftWeek(delta){
+  if (!BOARD.weeks) return;
+  var n = BOARD.focusIdx + delta;
+  if (n < 0) n = 0;
+  if (n > BOARD.weeks.length-1) n = BOARD.weeks.length-1;
+  BOARD.focusIdx = n;
+  renderWeeks();
+}
+
+// Render the 5 day columns for one week. `faded` = preview styling.
+function renderWeekDays(week, today, faded){
+  var html = '<div class="weekdays' + (faded ? " faded" : "") + '">';
   for (var j=0;j<week.length;j++){
     var day = week[j];
-    var isToday = sameDay(day.date, today);
+    var isToday = !faded && sameDay(day.date, today);
     var dateStr = day.date.getDate() + ". " + MON[day.date.getMonth()] + " " + day.date.getFullYear();
     var cs = "";
     if (day.cases.length === 0){
@@ -324,7 +424,8 @@ function render(text){
             staffHtml + '</div>' +
             '<ul class="cases">' + cs + '</ul></div>';
   }
-  host.innerHTML = html;
+  html += '</div>';
+  return html;
 }
 
 function load(){
@@ -437,6 +538,13 @@ function start(){
   setInterval(load, REFRESH_MS);
   loadWeather();
   setInterval(loadWeather, WEATHER_MS);
+
+  // Left/Right arrow keys (remote/keyboard) change the focused week
+  document.onkeydown = function(e){
+    var code = e.keyCode || e.which;
+    if (code === 37){ shiftWeek(-1); }      // left
+    else if (code === 39){ shiftWeek(1); }   // right
+  };
 }
 </script>
 </body>
