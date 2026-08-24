@@ -24,11 +24,13 @@
   .days { display:block; }
   .day { background:#16263a; border:1px solid #2c445f; border-radius:12px; overflow:hidden; }
   .day.is-today { border-color:#37b7c3; border-width:2px; }
-  .day-head { padding:14px 18px; background:#1b2f47; border-bottom:1px solid #2c445f; display:flex; align-items:center; flex-wrap:wrap; }
-  .day-head .dow { font-size:24px; font-weight:bold; }
-  .day-head .date { font-size:16px; color:#9fb6cf; margin-left:10px; }
-  .day-head .badge-today { margin-left:10px; font-size:12px; font-weight:bold; color:#062028; background:#37b7c3; padding:3px 10px; border-radius:20px; }
-  .day-head .staff-inline { margin-left:auto; display:flex; align-items:center; }
+  .day-head { height:72px; box-sizing:border-box; padding:0 18px; background:#1b2f47; border-bottom:1px solid #2c445f; display:flex; align-items:center; justify-content:space-between; flex-wrap:nowrap; overflow:hidden; }
+  .day-head-left { display:flex; flex-direction:column; justify-content:center; }
+  .day-head .dow-row { display:flex; align-items:center; }
+  .day-head .dow { font-size:24px; font-weight:bold; white-space:nowrap; line-height:1.1; }
+  .day-head .date { font-size:15px; color:#9fb6cf; white-space:nowrap; line-height:1.2; margin-top:2px; }
+  .day-head .badge-today { margin-left:10px; font-size:12px; font-weight:bold; color:#062028; background:#37b7c3; padding:3px 10px; border-radius:20px; white-space:nowrap; }
+  .day-head .staff-inline { display:flex; align-items:center; flex-shrink:0; padding-left:8px; }
   .cases { list-style:none; padding:6px 0; margin:0; }
   .case { padding:12px 18px; border-bottom:1px solid rgba(44,68,95,0.5); }
   .case .num { font-size:20px; font-weight:bold; color:#37b7c3; margin-right:12px; }
@@ -40,7 +42,7 @@
   .weeknav .wklabel { font-size:20px; font-weight:bold; color:#eaf2fb; min-width:340px; text-align:center; }
   .weeknav .wkarrow { font-size:26px; color:#37b7c3; cursor:pointer; user-select:none; padding:2px 14px; border-radius:8px; background:rgba(55,183,195,0.12); }
   .weeknav .wkarrow.dim { color:#3a5170; background:transparent; }
-  .weekdays { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; }
+  .weekdays { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; align-items:start; }
   .weekpreview { margin-top:18px; opacity:0.4; }
   .weekpreview .preview-label { font-size:15px; color:#9fb6cf; margin:0 0 8px 4px; font-weight:bold; }
   .staff { display:inline-flex; align-items:center; }
@@ -418,10 +420,14 @@ function renderWeekDays(week, today, faded){
     }
     var staffHtml = day.staff ? ('<span class="staff-inline">' + renderStaff(day.staff) + '</span>') : "";
     html += '<div class="day' + (isToday?" is-today":"") + '">' +
-            '<div class="day-head"><span class="dow">' + DOW[day.date.getDay()] + '</span>' +
-            '<span class="date">' + dateStr + '</span>' +
-            (isToday?'<span class="badge-today">Danes</span>':'') +
-            staffHtml + '</div>' +
+            '<div class="day-head">' +
+              '<div class="day-head-left">' +
+                '<div class="dow-row"><span class="dow">' + DOW[day.date.getDay()] + '</span>' +
+                (isToday?'<span class="badge-today">Danes</span>':'') + '</div>' +
+                '<span class="date">' + dateStr + '</span>' +
+              '</div>' +
+              staffHtml +
+            '</div>' +
             '<ul class="cases">' + cs + '</ul></div>';
   }
   html += '</div>';
