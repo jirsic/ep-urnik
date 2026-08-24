@@ -28,8 +28,8 @@
   .day-head-left { display:flex; flex-direction:column; justify-content:center; }
   .day-head .dow-row { display:flex; align-items:center; }
   .day-head .dow { font-size:24px; font-weight:bold; white-space:nowrap; line-height:1.1; }
+  .day-head .dow-today { color:#37b7c3; }
   .day-head .date { font-size:15px; color:#9fb6cf; white-space:nowrap; line-height:1.2; margin-top:2px; }
-  .day-head .badge-today { margin-left:10px; font-size:12px; font-weight:bold; color:#062028; background:#37b7c3; padding:3px 10px; border-radius:20px; white-space:nowrap; }
   .day-head .staff-inline { display:flex; align-items:center; flex-shrink:0; padding-left:8px; }
   .cases { list-style:none; padding:6px 0; margin:0; }
   .case { padding:12px 18px; border-bottom:1px solid rgba(44,68,95,0.5); }
@@ -45,9 +45,9 @@
   .weekdays { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; align-items:start; }
   .weekpreview { margin-top:18px; opacity:0.4; }
   .weekpreview .preview-label { font-size:15px; color:#9fb6cf; margin:0 0 8px 4px; font-weight:bold; }
-  .staff { display:inline-flex; align-items:center; }
-  .staff .chip { display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; color:#fff; font-size:12px; font-weight:bold; margin-left:5px; box-sizing:border-box; }
-  .staff .chipsep { display:inline-block; width:1px; height:20px; background:#2c445f; margin:0 4px 0 9px; vertical-align:middle; }
+  .staff { display:inline-flex; align-items:center; flex-wrap:wrap; justify-content:flex-end; max-width:160px; gap:3px; }
+  .staff .chip { display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:50%; color:#fff; font-size:10px; font-weight:bold; box-sizing:border-box; }
+  .staff .chipsep { display:inline-block; width:1px; height:16px; background:#2c445f; margin:0 2px; }
   .case .case-main { display:flex; align-items:center; }
   .case .sysname { margin-left:auto; font-size:13px; font-weight:bold; color:#fff; padding:3px 10px; border-radius:6px; white-space:nowrap; }
   .state { padding:60px 20px; text-align:center; color:#9fb6cf; font-size:20px; }
@@ -150,7 +150,7 @@ function hexToRgba(hex, alpha){
   return "rgba(" + r + "," + g + "," + b + "," + alpha + ")";
 }
 
-// Render staff as rows of colored circles
+// Render staff as colored circles (grouped by role order, wraps to 2 rows)
 function renderStaff(groups){
   if (!groups || !groups.length) return "";
   var html = '<div class="staff">';
@@ -161,7 +161,6 @@ function renderStaff(groups){
       var extra = (txt === "#12161b") ? ";border:1px solid #c3c8d0" : "";
       html += '<span class="chip" style="background:' + hexToRgba(person.color, 0.7) + ';color:' + txt + extra + '">' + esc(person.initials) + '</span>';
     }
-    if (g < groups.length-1) html += '<span class="chipsep"></span>';
   }
   html += '</div>';
   return html;
@@ -422,8 +421,7 @@ function renderWeekDays(week, today, faded){
     html += '<div class="day' + (isToday?" is-today":"") + '">' +
             '<div class="day-head">' +
               '<div class="day-head-left">' +
-                '<div class="dow-row"><span class="dow">' + DOW[day.date.getDay()] + '</span>' +
-                (isToday?'<span class="badge-today">Danes</span>':'') + '</div>' +
+                '<div class="dow-row"><span class="dow' + (isToday?" dow-today":"") + '">' + DOW[day.date.getDay()] + '</span></div>' +
                 '<span class="date">' + dateStr + '</span>' +
               '</div>' +
               staffHtml +
