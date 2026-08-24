@@ -17,7 +17,7 @@ Sead D. [A]; PeAF (študija) - še kontrola plevralnih izlivov
 Petek 21.8.2026
 Ponedeljek 24.8.2026
 @osebje: JH(#7a8ca0 | NB#e0892e, JI(#3ec97a | MT(#ffffff
-Anila T. [X]; asimptomatska preeksitacija
+Anila T. [X]; asimptomatska preeksitacija {DONE}
 Maks K. [X]; hitra atrijska tahikardija, sinkopa
 Torek 25.8.2026
 @osebje: MS(#c2568a, JH(#7a8ca0 | JI(#3ec97a, NB#e0892e | MJ(#ffffff
