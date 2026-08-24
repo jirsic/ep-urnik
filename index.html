@@ -38,6 +38,8 @@
   .case .desc { font-size:18px; color:#9fb6cf; margin-top:2px; }
   .case.study { background:rgba(242,177,52,0.08); }
   .case.study .tag { display:inline-block; font-size:11px; font-weight:bold; color:#2a1e00; background:#f2b134; padding:2px 8px; border-radius:4px; margin-left:8px; }
+  .case.done { opacity:0.4; }
+  .case.done .name::after { content:" ✓"; color:#3ec97a; font-weight:bold; }
   .weeknav { display:flex; align-items:center; justify-content:center; padding:8px 0 14px; gap:20px; }
   .weeknav .wklabel { font-size:20px; font-weight:bold; color:#eaf2fb; min-width:340px; text-align:center; }
   .weeknav .wkarrow { font-size:26px; color:#37b7c3; cursor:pointer; user-select:none; padding:2px 14px; border-radius:8px; background:rgba(55,183,195,0.12); }
@@ -266,12 +268,15 @@ function render(text){
       var idx = line.indexOf(";");
       var name = line, desc = "";
       if (idx > -1){ name = line.substring(0,idx).replace(/^\s+|\s+$/g,""); desc = line.substring(idx+1).replace(/^\s+|\s+$/g,""); }
+      // Done marker: "{DONE}" anywhere on the line -> case is completed
+      var done = /\{DONE\}/i.test(line);
+      if (done){ desc = desc.replace(/\s*\{DONE\}\s*/i," ").replace(/^\s+|\s+$/g,""); name = name.replace(/\s*\{DONE\}\s*/i," ").replace(/^\s+|\s+$/g,""); }
       // System tag: "Iztok M. [C]" -> system letter C, name without the tag
       var sys = "";
       var tagM = name.match(/\[([CXAR])\]\s*$/i);
       if (tagM){ sys = tagM[1].toUpperCase(); name = name.replace(/\[([CXAR])\]\s*$/i,"").replace(/^\s+|\s+$/g,""); }
       var study = /študija/i.test(line);
-      cur.cases.push({ name:name, desc:desc, study:study, sys:sys });
+      cur.cases.push({ name:name, desc:desc, study:study, sys:sys, done:done });
     }
   }
   var host = document.getElementById("days");
@@ -407,7 +412,7 @@ function renderWeekDays(week, today, faded){
         var sysName = SYS_NAMES[c.sys] || "";
         var rowStyle = sysColor ? (' style="border-left:6px solid ' + sysColor + ';"') : "";
         var sysLabel = sysName ? ('<span class="sysname" style="background:' + hexToRgba(sysColor, 0.7) + '">' + sysName + '</span>') : "";
-        cs += '<li class="case' + (c.study?" study":"") + '"' + rowStyle + '>' +
+        cs += '<li class="case' + (c.study?" study":"") + (c.done?" done":"") + '"' + rowStyle + '>' +
               '<div class="case-main">' +
                 '<span class="num">' + (k+1) + '</span>' +
                 '<span class="name">' + esc(c.name) + (c.study?'<span class="tag">ŠTUDIJA</span>':'') + '</span>' +
