@@ -16,20 +16,20 @@ Jože K. [A]; Persistentna preddvorna fibrilacija (HFrEF s tahikardno AF), st.p.
 Sead D. [A]; PeAF (študija) - še kontrola plevralnih izlivov
 Petek 21.8.2026
 Ponedeljek 24.8.2026
-@osebje: JH#666666 | NB#e0b02e, JI#666666 | MT#ffffff
+@osebje: JH#666666, JH(#2e8b57 | JI#666666, JI(#2e8b57, NB#e0b02e | MT#ffffff, MT(#ffffff
 Anila T. [X]; asimptomatska preeksitacija {DONE}
 Maks K. [X]; hitra atrijska tahikardija, sinkopa {DONE}
 Torek 25.8.2026
-@osebje: MS#666666, JH#666666 | JI#666666, NB#e0b02e | MJ#ffffff
+@osebje: MS#666666, JH#666666, MS(#2e8b57, JH(#2e8b57 | JI#666666, JI(#2e8b57, NB#e0b02e | MJ#ffffff, MJ(#ffffff
 Janez K. [C]; Epizode najverjetneje ventrikularne tahikardije in pogoste VES, SVT-asimptomatske
 Mohor R. [C]; Prezgodnja depolarizacija prekatov
 Maja B. [C]; AVNRT redo
 Sreda 26.8.2026
-@osebje: SK#666666 | JI#666666 | MJ#ffffff
+@osebje: SK#666666 | JI#666666, JI(#2e8b57, JŠ(#284d84 | MJ#ffffff, MJ(#ffffff
 Marjan R. [C]; Močno simptomatske epizode AF po uspešni RFA v letu 2022
 Antonija G. [C]; Tahikardija s širokimi QRS kompleksi/SVT z aberanco?
 Četrtek 27.8.2026
-@osebje: ZR#666666, JH#666666, ZR(#e0b02e, JH(#2e8b57 | JŠ#666666, JI#666666 | MJ#ffffff
+@osebje: ZR#666666, JH#666666, ZR(#e0b02e, JH(#2e8b57 | JŠ#666666, JI#666666, JI(#2e8b57, JŠ(#284d84 | MJ#ffffff, MJ(#ffffff
 Mirjan J. [C]; Recidiv VT, st. p. impl. ICD
 Magdalini P. [C]; Atrijska tahikardija
 Zadnje naročilo: //
