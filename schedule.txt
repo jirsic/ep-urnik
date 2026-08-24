@@ -1,35 +1,5 @@
-Ponedeljek 17.8.2026
-@osebje: JH#666666 | NB#e0892e, JI#666666 | MT#ffffff, MJ#ffffff
-Hana S. K. [X]; PSVT
-Melisa K. [X]; PSVT
-Torek 18.8.2026
-@osebje: JH#666666, ZR#666666 | JI#666666, NB#e0892e | MJ#ffffff
-Iztok M. [X]; Re-map
-Marija T. [X]; Recidiv AF ali pojav SVT, st.p. RFA
-Sreda 19.8.2026
-@osebje: JH#666666, ZR#666666 | JŠ#666666 | MJ#ffffff
-Slavica Ž. [X]; Paroksizmalna AF
-Edvin D. [C]; Visoko breme ventrikularne ektopije in začetna tahikardna KMP
-Četrtek 20.8.2026
-@osebje: JH#666666, ZR#666666 | JŠ#666666, JI#666666, NB#e0892e | MJ#ffffff
-Jože K. [A]; Persistentna preddvorna fibrilacija (HFrEF s tahikardno AF), st.p. RFA PeAF -delno (študija) - splošna anestezija
-Sead D. [A]; PeAF (študija) - še kontrola plevralnih izlivov
-Petek 21.8.2026
 Ponedeljek 24.8.2026
-@osebje: JH(#7a8ca0 | NB#e0892e, JI(#3ec97a | MT(#ffffff
-Anila T. [X]; asimptomatska preeksitacija {DONE}
-Maks K. [X]; hitra atrijska tahikardija, sinkopa
 Torek 25.8.2026
-@osebje: MS(#c2568a, JH(#7a8ca0 | JI(#3ec97a, NB#e0892e | MJ(#ffffff
-Janez K. [C]; Epizode najverjetneje ventrikularne tahikardije in pogoste VES, SVT-asimptomatske
-Mohor R. [C]; Prezgodnja depolarizacija prekatov
-??. ??. [C]; AVNRT redo
 Sreda 26.8.2026
-@osebje: SK#666666 | JI(#3ec97a | MJ(#ffffff
-Marjan R. [C]; Močno simptomatske epizode AF po uspešni RFA v letu 2022
-Antonija G. [C]; Tahikardija s širokimi QRS kompleksi/SVT z aberanco?
 Četrtek 27.8.2026
-@osebje: ZR(#d84b4b, JH(#7a8ca0 | JŠ(#37b7c3, JI(#3ec97a | MJ(#ffffff
-Mirjan J. [C]; Recidiv VT, st. p. impl. ICD
-Magdalini P. [C]; Atrijska tahikardija
-Zadnje naročilo (21.8.2026): 10x Dolgo vodilo SR0 | 10x Dynamic XT | 2SC NavX EnsiteX patch set
+Petek 28.8.2026
