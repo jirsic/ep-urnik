@@ -22,7 +22,7 @@ Maks K. [X]; hitra atrijska tahikardija, sinkopa {DONE}
 Torek 25.8.2026
 @osebje: MS(#2e8b57, JH(#2e8b57 | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
 Janez K. [C]; Epizode najverjetneje ventrikularne tahikardije in pogoste VES, SVT-asimptomatske {DONE}
-Mohor R. [C]; Prezgodnja depolarizacija prekatov
+Mohor R. [C]; Prezgodnja depolarizacija prekatov {DONE}
 Maja B. [C]; AVNRT redo
 Sreda 26.8.2026
 @osebje: SK#666666 | JI(#2e8b57, JŠ(#284d84 | MJ(#ffffff
