@@ -26,7 +26,7 @@ Mohor R. [C]; Prezgodnja depolarizacija prekatov {DONE}
 Maja B. [C]; AVNRT redo {DONE}
 Sreda 26.8.2026
 @osebje: SK#666666 | JI#666666, JŠ#666666 | MJ#ffffff
-Marjan R. [X]; Močno simptomatske epizode AF po uspešni RFA v letu 2022
+Marjan R. [X]; Močno simptomatske epizode AF po uspešni RFA v letu 2022 {DONE}
 Antonija G. [C]; Tahikardija s širokimi QRS kompleksi/SVT z aberanco?
 Četrtek 27.8.2026
 @osebje: ZR#666666, JH#666666 | JI#666666, JŠ#666666 | MJ#ffffff
