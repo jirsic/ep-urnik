@@ -33,19 +33,19 @@ Antonija G. [C]; Tahikardija s širokimi QRS kompleksi/SVT z aberanco? {DONE}
 Mirjan J. [C]; Recidiv VT, st. p. impl. ICD
 Magdalini P. [C]; Atrijska tahikardija
 Ponedeljek 31.8.2026
-@osebje: JH(#2e8b57 | NB#e0b02e | MT(#ffffff
+@osebje: SK#666666 | NB#e0b02e | MT(#ffffff
 Nina K. [X]; SVT
 Jure Ž. [X]; WPW
 Torek 1.9.2026
-@osebje: JI(#2e8b57, NB#e0b02e | MJ(#ffffff
+@osebje: JH(#2e8b57, ZR(#e0b02e | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
 Janez J. [C]; EndoMaze študija remap
 Strashko J. [A]; Tahikardna AF, srčno popuščanje
 Sreda 2.9.2026
-@osebje: JI(#2e8b57 | MJ(#ffffff
+@osebje: JH(#2e8b57, ZR(#e0b02e | JI(#2e8b57 | MJ(#ffffff
 Rudi N. [A]; PAF, st.p. RFA AF in atipične AU (Affera)
 Andrej H. [C]; VES-povišano število
 Četrtek 3.9.2026
-@osebje: JI(#2e8b57, JŠ(#284d84 | MJ(#ffffff
+@osebje: JH(#2e8b57, ZR(#e0b02e | JI(#2e8b57, JŠ(#284d84 | MJ(#ffffff
 Janez J. [C]; VT, st.p. Impl. ICD
 Vida Z. [C]; Recidiv AVNRT po krioablaciji
 Zadnje naročilo (26.8.2026): 214066	Kratko vodilo 7F	3 SC	ARROW
