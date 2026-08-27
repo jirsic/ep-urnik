@@ -30,7 +30,7 @@ Marjan R. [X]; Močno simptomatske epizode AF po uspešni RFA v letu 2022 {DONE}
 Antonija G. [C]; Tahikardija s širokimi QRS kompleksi/SVT z aberanco? {DONE}
 Četrtek 27.8.2026
 @osebje: ZR#666666, JH#666666 | JI#666666, JŠ#666666 | MJ#ffffff
-Mirjan J. [C]; Recidiv VT, st. p. impl. ICD
+Mirjan J. [C]; Recidiv VT, st. p. impl. ICD {DONE}
 Magdalini P. [C]; Atrijska tahikardija
 Ponedeljek 31.8.2026
 @osebje: SK#666666 | NB#e0b02e | MT(#ffffff
