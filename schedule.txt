@@ -32,27 +32,20 @@ Antonija G. [C]; Tahikardija s širokimi QRS kompleksi/SVT z aberanco? {DONE}
 @osebje: ZR#666666, JH#666666 | JI#666666, JŠ#666666 | MJ#ffffff
 Mirjan J. [C]; Recidiv VT, st. p. impl. ICD
 Magdalini P. [C]; Atrijska tahikardija
-
 Ponedeljek 31.8.2026
-Nina K.; SVT
-Jure Ž.; WPW
-
+@osebje: JH(#2e8b57 | NB#e0b02e | MT(#ffffff
+Nina K. [X]; SVT
+Jure Ž. [X]; WPW
 Torek 1.9.2026
-Strashko J.; Tahikardna AF, srčno popuščanje
-JERAS Janez; Re-Map
-
+@osebje: JI(#2e8b57, NB#e0b02e | MJ(#ffffff
+Janez J. [C]; EndoMaze študija remap
+Strashko J. [A]; Tahikardna AF, srčno popuščanje
 Sreda 2.9.2026
-Rudi N.; PAF, st.p. RFA AF in atipične AU (Affera)
-Andrej H.; VES-povišano število
-
+@osebje: JI(#2e8b57 | MJ(#ffffff
+Rudi N. [A]; PAF, st.p. RFA AF in atipične AU (Affera)
+Andrej H. [C]; VES-povišano število
 Četrtek 3.9.2026
-Janez J.; VT, st.p. Impl. ICD 
-Vida Z.; Recidiv AVNRT po krioablaciji
-
+@osebje: JI(#2e8b57, JŠ(#284d84 | MJ(#ffffff
+Janez J. [C]; VT, st.p. Impl. ICD
+Vida Z. [C]; Recidiv AVNRT po krioablaciji
 Zadnje naročilo (26.8.2026): 214066	Kratko vodilo 7F	3 SC	ARROW
-215376	Kratko vodilo 10Fr	7 SC	TERUMO
-214028	PTCA kat. Acunav uz 10F GE	9 KO	BIOWE
-218232	Žilno zapiralo perclose prostyle	1 SC	ABBOTT
-217893	DECANAV F krivina (10 elekt. 2-8-2 )	4 KO	BIOWE
-217403	SMART TOUCH ST SF D krivina ablacijski kateter (8F, navigacijski)	4 KO	BIOWE
-213768	Freezor Xtra 6 mm ablacijski kateter	3 KO	MEDTRONIC
