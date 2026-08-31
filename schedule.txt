@@ -35,7 +35,7 @@ Magdalini P. [C]; Atrijska tahikardija {DONE}
 Ponedeljek 31.8.2026
 @osebje: SK#666666 | NB#e0b02e | MT(#ffffff
 Nina K. [X]; SVT {DONE}
-Jure Ž. [X]; WPW
+Jure Ž. [X]; WPW {DONE}
 Torek 1.9.2026
 @osebje: JH(#2e8b57, ZR(#e0b02e | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
 Janez J. [C]; EndoMaze študija remap
