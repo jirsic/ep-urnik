@@ -33,25 +33,20 @@ Antonija G. [C]; Tahikardija s širokimi QRS kompleksi/SVT z aberanco? {DONE}
 Mirjan J. [C]; Recidiv VT, st. p. impl. ICD {DONE}
 Magdalini P. [C]; Atrijska tahikardija {DONE}
 Ponedeljek 31.8.2026
-@osebje: SK#666666 | NB#e0b02e | MT(#ffffff
+@osebje: SK#666666 | NB#e0b02e | MT#ffffff
 Nina K. [X]; SVT {DONE}
 Jure Ž. [X]; WPW {DONE}
 Torek 1.9.2026
-@osebje: JH(#2e8b57, ZR(#e0b02e | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
+@osebje: JH#666666, ZR#666666 | JI#666666, NB#e0b02e | MJ#ffffff
 Janez J. [C]; EndoMaze študija remap {DONE}
 Strashko J. [A]; Tahikardna AF, srčno popuščanje
 Sreda 2.9.2026
-@osebje: JH(#2e8b57, ZR(#e0b02e | JI(#2e8b57 | MJ(#ffffff
+@osebje: JH#666666, ZR#666666 | JI#666666 | MJ#ffffff
 Rudi N. [A]; PAF, st.p. RFA AF in atipične AU (Affera)
 Andrej H. [C]; VES-povišano število
+Kardio Pacient [C]; VES
 Četrtek 3.9.2026
-@osebje: JH(#2e8b57, ZR(#e0b02e | JI(#2e8b57, JŠ(#284d84 | MJ(#ffffff
+@osebje: JH#666666, ZR#666666 | JI#666666, JŠ#666666 | MJ#ffffff
 Janez J. [C]; VT, st.p. Impl. ICD
 Vida Z. [C]; Recidiv AVNRT po krioablaciji
-Zadnje naročilo (26.8.2026): 213427	Transseptalna igla BRK-1 71cm	10 KO	ABBOTT, 214027	PTCA kat. Acunav uz 8F GE	1 KO	BIOWE
-218232	Žilno zapiralo perclose prostyle	2 SC	ABBOTT
-214495	CARTO patch set	5 KO	BIOWE
-217892	DECANAV D krivina (10 elekt. 2-8-2 )	6 KO	BIOWE
-311380	SMART TOUCH ST SF DUO F krivina ablacijski kateter (8F, navigacijski)	1 KO	BIOWE
-218821	FARADRIVE dolgo uvajalo za FARAWAVE kateter	3 KO	BOSTON
-211578	Vodilna žica za FARAWAVE kateter Amplatz	3 KO	BOSTON
+Zadnje naročilo (26.8.2026): 213427	Transseptalna igla BRK-1 71cm	10 KO	ABBOTT  214027	PTCA kat. Acunav uz 8F GE	1 KO	BIOWE
