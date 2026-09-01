@@ -48,4 +48,10 @@ Andrej H. [C]; VES-povišano število
 @osebje: JH(#2e8b57, ZR(#e0b02e | JI(#2e8b57, JŠ(#284d84 | MJ(#ffffff
 Janez J. [C]; VT, st.p. Impl. ICD
 Vida Z. [C]; Recidiv AVNRT po krioablaciji
-Zadnje naročilo (26.8.2026): 214066	Kratko vodilo 7F	3 SC	ARROW
+Zadnje naročilo (26.8.2026): 213427	Transseptalna igla BRK-1 71cm	10 KO	ABBOTT, 214027	PTCA kat. Acunav uz 8F GE	1 KO	BIOWE
+218232	Žilno zapiralo perclose prostyle	2 SC	ABBOTT
+214495	CARTO patch set	5 KO	BIOWE
+217892	DECANAV D krivina (10 elekt. 2-8-2 )	6 KO	BIOWE
+311380	SMART TOUCH ST SF DUO F krivina ablacijski kateter (8F, navigacijski)	1 KO	BIOWE
+218821	FARADRIVE dolgo uvajalo za FARAWAVE kateter	3 KO	BOSTON
+211578	Vodilna žica za FARAWAVE kateter Amplatz	3 KO	BOSTON
