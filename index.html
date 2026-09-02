@@ -516,7 +516,7 @@ function updateTraffic(text){
   if (text){
     // Color the status: green-ish if "pretočno", amber if a jam word appears.
     var cls = "tstat";
-    var color = "#3ec97a"; // flowing = green
+    var color = "#8B0000"; // flowing = green
     if (/zastoj|zapora|nesreč|kolona|oviran/i.test(text)) color = "#f2b134"; // amber
     el.innerHTML = 'Promet: <span class="' + cls + '" style="color:' + color + '">' + esc(text) + '</span>';
     el.style.display = "inline";
