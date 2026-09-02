@@ -48,7 +48,7 @@ Srečko iz Celja [C]; VES {DONE}
 IPP pacient [X]; PAF {DONE}
 Četrtek 3.9.2026
 @osebje: JH#666666, ZR#666666 | JI#666666, JŠ#666666 | MJ#ffffff
-Janez J. [C]; VT, st.p. Impl. ICD
+Janez J. [A]; VT, st.p. Impl. ICD
 Vida Z. [C]; Recidiv AVNRT po krioablaciji
 Zadnje naročilo (26.8.2026): 213427	Transseptalna igla BRK-1 71cm	10 KO	ABBOTT  214027	PTCA kat. Acunav uz 8F GE	1 KO	BIOWE
 Promet LJ-KP: VSE STOJI
