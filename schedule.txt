@@ -44,7 +44,7 @@ Andrej H. [C]; VES - povišano število {DONE}
 Sreda 2.9.2026
 @osebje: JH#666666, ZR#666666 | JI#666666 | MJ#ffffff
 Rudi N. [A]; PAF, st.p. RFA AF in atipične AU (Affera) {DONE}
-Kardio Pacient [C]; VES
+Srečko iz Celja [C]; VES
 Četrtek 3.9.2026
 @osebje: JH#666666, ZR#666666 | JI#666666, JŠ#666666 | MJ#ffffff
 Janez J. [C]; VT, st.p. Impl. ICD
