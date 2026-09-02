@@ -50,4 +50,4 @@ Kardio Pacient [C]; VES
 Janez J. [C]; VT, st.p. Impl. ICD
 Vida Z. [C]; Recidiv AVNRT po krioablaciji
 Zadnje naročilo (26.8.2026): 213427	Transseptalna igla BRK-1 71cm	10 KO	ABBOTT  214027	PTCA kat. Acunav uz 8F GE	1 KO	BIOWE
-Promet Promet LJ-KP: VSE STOJI
+Promet LJ-KP: VSE STOJI
