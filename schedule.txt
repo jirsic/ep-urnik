@@ -49,7 +49,7 @@ IPP pacient [X]; PAF {DONE}
 Četrtek 3.9.2026
 @osebje: JH#666666, ZR#666666 | JI#666666, JŠ#666666 | MJ#ffffff
 Janez J. [A]; VT, st.p. Impl. ICD {DONE}
-Vida Z. [C]; Recidiv AVNRT po krioablaciji
+Vida Z. [C]; Recidiv AVNRT po krioablaciji {DONE}
 Torek 7.9.
 Erna L.; PAF / AU, st.p. impl. PM, st.p. AVR bio, RFA, AtriClip
 Pavla Š; PAF
