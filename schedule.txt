@@ -51,13 +51,16 @@ IPP pacient [X]; PAF {DONE}
 Janez J. [A]; VT, st.p. Impl. ICD {DONE}
 Vida Z. [C]; Recidiv AVNRT po krioablaciji {DONE}
 Torek 8.9.2026
-Erna L.; PAF / AU, st.p. impl. PM, st.p. AVR bio, RFA, AtriClip
-Pavla Š; PAF
+@osebje: SK#666666 | JŠ(#284d84, NB#e0b02e | MJ(#ffffff
+Erna L. [C]; PAF / AU, st.p. impl. PM, st.p. AVR bio, RFA, AtriClip
+Pavla Š [X]; PAF
 Sreda 9.9.2026
-Ana Ž; VES (16%)
-Zlata Z; St. p. RFA, simptomatski recidiv AF
+@osebje: JH(#2e8b57 | NB#e0b02e | MJ(#ffffff
+Ana Ž [C]; VES (16%)
+Zlata Z [A]; St. p. RFA, simptomatski recidiv AF
 Četrtek 10.9.2026
-Nahod S; Pogoste epizode AF, perzistentna?
-Jošt Z; Palpitacije, WPW sindrom? (sprejem zjutraj)
+@osebje: JH(#2e8b57, JŽ(#37b7c3 | JŠ(#284d84, NB#e0b02e | MJ(#ffffff
+Nahod S [A]; Pogoste epizode AF, perzistentna?
+Jošt Z [C]; Palpitacije, WPW sindrom? (sprejem zjutraj)
 Zadnje naročilo (26.8.2026): 213427	Transseptalna igla BRK-1 71cm	10 KO	ABBOTT  214027	PTCA kat. Acunav uz 8F GE	1 KO	BIOWE
 Promet LJ-KP: VSE STOJI
