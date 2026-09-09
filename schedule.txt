@@ -1,9 +1,9 @@
 Ponedeljek 17.8.2026
-@osebje: JH#666666 | NB#e0b02e, JI#666666 | MT#ffffff, MJ#ffffff
+@osebje: JH#666666 | NB#666666, JI#666666 | MT#ffffff, MJ#ffffff
 Hana S. K. [X]; PSVT
 Melisa K. [X]; PSVT
 Torek 18.8.2026
-@osebje: JH#666666, ZR#666666 | JI#666666, NB#e0b02e | MJ#ffffff
+@osebje: JH#666666, ZR#666666 | JI#666666, NB#666666 | MJ#ffffff
 Iztok M. [X]; Re-map
 Marija T. [X]; Recidiv AF ali pojav SVT, st.p. RFA
 Sreda 19.8.2026
@@ -11,16 +11,16 @@ Sreda 19.8.2026
 Slavica Ž. [X]; Paroksizmalna AF
 Edvin D. [C]; Visoko breme ventrikularne ektopije in začetna tahikardna KMP
 Četrtek 20.8.2026
-@osebje: JH#666666, ZR#666666 | JŠ#666666, JI#666666, NB#e0b02e | MJ#ffffff
+@osebje: JH#666666, ZR#666666 | JŠ#666666, JI#666666, NB#666666 | MJ#ffffff
 Jože K. [A]; Persistentna preddvorna fibrilacija (HFrEF s tahikardno AF), st.p. RFA PeAF -delno (študija) - splošna anestezija
 Sead D. [A]; PeAF (študija) - še kontrola plevralnih izlivov
 Petek 21.8.2026
 Ponedeljek 24.8.2026
-@osebje: JH#666666 | JI#666666, NB#e0b02e | MT#ffffff
+@osebje: JH#666666 | JI#666666, NB#666666 | MT#ffffff
 Anila T. [X]; asimptomatska preeksitacija {DONE}
 Maks K. [X]; hitra atrijska tahikardija, sinkopa {DONE}
 Torek 25.8.2026
-@osebje: MS#666666, JH#666666 | JI#666666, NB#e0b02e | MJ#ffffff
+@osebje: MS#666666, JH#666666 | JI#666666, NB#666666 | MJ#ffffff
 Janez K. [C]; Epizode najverjetneje ventrikularne tahikardije in pogoste VES, SVT-asimptomatske {DONE}
 Mohor R. [C]; Prezgodnja depolarizacija prekatov {DONE}
 Maja B. [C]; AVNRT redo {DONE}
@@ -33,11 +33,11 @@ Antonija G. [C]; Tahikardija s širokimi QRS kompleksi/SVT z aberanco? {DONE}
 Mirjan J. [C]; Recidiv VT, st. p. impl. ICD {DONE}
 Magdalini P. [C]; Atrijska tahikardija {DONE}
 Ponedeljek 31.8.2026
-@osebje: SK#666666 | NB#e0b02e | MT#ffffff
+@osebje: SK#666666 | NB#666666 | MT#ffffff
 Nina K. [X]; SVT {DONE}
 Jure Ž. [X]; WPW {DONE}
 Torek 1.9.2026
-@osebje: JH#666666, ZR#666666 | JI#666666, NB#e0b02e | MJ#ffffff
+@osebje: JH#666666, ZR#666666 | JI#666666, NB#666666 | MJ#ffffff
 Janez J. [C]; EndoMaze študija remap {DONE}
 Strashko J. [A]; Tahikardna AF, srčno popuščanje {DONE}
 Andrej H. [C]; VES - povišano število {DONE}
@@ -51,18 +51,17 @@ IPP pacient [X]; PAF {DONE}
 Janez J. [A]; VT, st.p. Impl. ICD {DONE}
 Vida Z. [C]; Recidiv AVNRT po krioablaciji {DONE}
 Ponedeljek 7.9.2026
-@osebje: JŽ(#37b7c3 | JŠ(#284d84, NB#e0b02e | MJ(#ffffff
+@osebje: JŽ#666666 | JŠ#666666, NB#666666 | MJ#ffffff
 ?? ?. [A]; VT storm, ICD {DONE}
 Torek 8.9.2026
-@osebje: SK#666666 | JŠ#666666, NB#e0b02e | MJ#ffffff
+@osebje: SK#666666 | JŠ#666666, NB#666666 | MJ#ffffff
 Erna L. [C]; PAF / AU, st.p. impl. PM, st.p. AVR bio, RFA, AtriClip {DONE}
 Pavla Š [X]; PAF
 Sreda 9.9.2026
-@osebje: JH#666666 | NB#e0b02e | MJ#ffffff
-Ana Ž [C]; VES (16%)
+@osebje: JH#666666, SK#666666 | NB#666666 | MJ#ffffff
 Zlata Z [A]; St. p. RFA, simptomatski recidiv AF
 Četrtek 10.9.2026
-@osebje: JH#666666, JŽ#666666 | JŠ#666666, NB#e0b02e | MJ#ffffff
+@osebje: JH#666666, JŽ#666666 | JŠ#666666, NB#666666 | MJ#ffffff
 Nahod S [A]; Pogoste epizode AF, perzistentna?
 Jošt Z [C]; Palpitacije, WPW sindrom? (sprejem zjutraj)
 Zadnje naročilo (4.9.2026): Soundstar UZ 10F GE (1 kos); Acunav UZ 8F GE (1 kos); Acunav UZ 10F GE (10 kos); DECANAV D krivina, 10 elektrod 2-8-2 (3 kos); DYNAMIC XT, 10 elektrod 2-6-2, 6F large (12 kos); plinska cevka za Freezor (3 kos)
