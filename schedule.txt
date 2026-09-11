@@ -65,5 +65,5 @@ Zlata Z [A]; St. p. RFA, simptomatski recidiv AF {DONE}
 Nahod S [C]; Pogoste epizode AF, perzistentna? {DONE}
 Jošt Z [C]; Palpitacije, WPW sindrom? (sprejem zjutraj) {DONE}
 Zlata Z [A]; Af {DONE}
-Zadnje naročilo (9.9.2026): Agilis NXT small	(2 kos); CARTO patch set (6 KO); CARTO cevka za izpiralno črpalko	(8 KO); DECANAV F (3 KO); FARADRIVE (2 kos); FARAWAVE kateter	2 KO; Amplatz 	2 KO; AFFERA patch set	 2 SC; SPHERE-9 ablacijski kateter	7 KO;	SPHERE-9 cevka	1 SC
+Zadnje naročilo (9.9.2026): CARTO cevka	 8 KO; FARADRIVE (2 kos); SPHERE-9 ablacijski kateter	7; Dolgo vodilo SR0	13 KO; Transseptalna igla 11 KO; Acunav uz 8 KO; DECANAV D krivina 5 KO; ST SF DUO D 2 KO
 Promet LJ-KP: VSE STOJI
