@@ -65,5 +65,18 @@ Zlata Z [A]; St. p. RFA, simptomatski recidiv AF {DONE}
 Nahod S [C]; Pogoste epizode AF, perzistentna? {DONE}
 Jošt Z [C]; Palpitacije, WPW sindrom? (sprejem zjutraj) {DONE}
 Zlata Z [A]; Af {DONE}
-Zadnje naročilo (9.9.2026): CARTO cevka	 8 KO; FARADRIVE (2 kos); SPHERE-9 ablacijski kateter	7; Dolgo vodilo SR0	13 KO; Transseptalna igla 11 KO; Acunav uz 8 KO; DECANAV D krivina 5 KO; ST SF DUO D 2 KO
+Ponedeljek 14.9.2026
+Mila R. [N]; PSVT
+Torek 15.9.2026
+Vera J. [N]; Tipična AU / PAF
+Cvetko L. [N]; PAF
+Maja R. [C]; Palpitacije, st.p.krioablaciji počasne poti AV vozla zaradi AVNRT (april 2025) - sprejem zjutraj
+Sreda 16.9.2026
+Matjaž B. [C]; PAF, st. p. RFA (l. 2017)
+Nermin M. [C]; Intermitentna ventrikularna preeksitacija
+Četrtek 17.9.2026
+Ante C. [A]; AF s tahikardnim odgovorom, dilatativna KMP
+Denis L. [A]; PAF/AU
+
+Zadnje naročilo (9.9.2026): Dolgo vodilo SR0 (13 KO, ABBOTT); Transseptalna igla BRK-1 71cm (11 KO, ABBOTT); PTCA kat. Acunav uz 10F GE (8 KO, BIOWE); DECANAV D krivina, 10 elekt. 2-8-2 (5 KO, BIOWE); SMART TOUCH ST SF DUO D krivina ablacijski kateter, 8F navigacijski (2 KO, BIOWE)
 Promet LJ-KP: VSE STOJI
