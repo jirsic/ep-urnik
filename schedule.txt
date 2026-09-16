@@ -75,7 +75,7 @@ Cvetko L.  [X]; PAF {DONE}
 Maja R. [C]; Palpitacije, st.p.krioablaciji počasne poti AV vozla zaradi AVNRT (april 2025) - sprejem zjutraj {DONE}
 Sreda 16.9.2026
 @osebje: JH#666666 | NB#666666 | MJ#ffffff
-Matjaž B. [C]; PAF, st. p. RFA (l. 2017)
+Matjaž B. [C]; PAF, st. p. RFA (l. 2017) {DONE}
 Nermin M. [C]; Intermitentna ventrikularna preeksitacija {DONE}
 Četrtek 17.9.2026
 @osebje: JH#666666 | JŠ#666666, NB#666666 | MJ#ffffff
