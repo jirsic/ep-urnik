@@ -82,21 +82,20 @@ Nermin M. [C]; Intermitentna ventrikularna preeksitacija {DONE}
 Ante C. [A]; AF s tahikardnim odgovorom, dilatativna KMP {DONE}
 Denis L. [A]; PAF/AU
 Ponedeljek 21.9.2026
-@osebje: JH(#2e8b57 | NB#e0b02e, JI(#2e8b57 | MJ(#ffffff
+@osebje: JH#666666 | NB#e0b02e, JI#666666 | MJ#ffffff
 Zala R. [X]; SVT
+Sandra ?. [X]; SVT
 Torek 22.9.2026
-@osebje: ZR(#e0b02e, JH(#2e8b57 | JI(#2e8b57 | MJ(#ffffff
+@osebje: ZR#666666, JH#666666 | JI#666666 | MJ#ffffff
 Ramo M. [X]; EndoMaze remap (študija)
 Irma P. [X]; Recidiv PSVT, st.p. RFA AVNRT (2026)
 Sreda 23.9.2026
-@osebje: SK#666666 | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
+@osebje: SK#666666 | JI#666666, NB#e0b02e | MJ#ffffff
 Dušan T. [C]; Pogoste VES
 Vesna A. L. [R]; PAF
 Četrtek 24.9.2026
-@osebje: ZR(#e0b02e, JH(#2e8b57 | JI(#2e8b57, JŠ(#284d84 | MJ(#ffffff
+@osebje: ZR#666666, JH#666666 | JI#666666, JŠ#666666 | MJ#ffffff
 Ivana B. V. [R]; PAF / PeAF?
 Jožica S. [A]; AF s tahikardnim odgovorom prekatov, st.p. RFA PAF - WACA (2023)
 Zadnje naročilo (11.8.2026): Transseptalna igla BRK-1 71cm (10 KO, ABBOTT);215106	Agilis NXT large (8,5 F)	9 KO	ABBOTT
-214495	CARTO patch set	5 KO	BIOWE
-218409	NAVX EnsiteX patch set	2 SC	ABBOTT
 Promet LJ-KP: VSE STOJI
