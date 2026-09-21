@@ -84,7 +84,7 @@ Denis L. [A]; PAF/AU
 Ponedeljek 21.9.2026
 @osebje: JH#666666 | NB#e0b02e, JI#666666 | MJ#ffffff
 Zala R. [X]; SVT {DONE}
-Sandra ?. [X]; SVT
+Sandra ?. [X]; SVT {DONE}
 Torek 22.9.2026
 @osebje: ZR#666666, JH#666666 | JI#666666 | MJ#ffffff
 Ramo M. [X]; EndoMaze remap (študija)
