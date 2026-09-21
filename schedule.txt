@@ -83,7 +83,7 @@ Ante C. [A]; AF s tahikardnim odgovorom, dilatativna KMP {DONE}
 Denis L. [A]; PAF/AU
 Ponedeljek 21.9.2026
 @osebje: JH#666666 | NB#e0b02e, JI#666666 | MJ#ffffff
-Zala R. [X]; SVT
+Zala R. [X]; SVT {DONE}
 Sandra ?. [X]; SVT
 Torek 22.9.2026
 @osebje: ZR#666666, JH#666666 | JI#666666 | MJ#ffffff
