@@ -87,7 +87,7 @@ Zala R. [X]; SVT {DONE}
 Sandra ?. [X]; SVT {DONE}
 Torek 22.9.2026
 @osebje: ZR#666666, JH#666666 | JI#666666 | MJ#ffffff
-Ramo M. [X]; EndoMaze remap (študija)
+Ramo M. [X]; EndoMaze remap (študija) {DONE}
 Irma P. [X]; Recidiv PSVT, st.p. RFA AVNRT (2026)
 Sreda 23.9.2026
 @osebje: SK#666666 | JI#666666, NB#e0b02e | MJ#ffffff
