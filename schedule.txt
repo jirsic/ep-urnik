@@ -91,7 +91,7 @@ Ramo M. [X]; EndoMaze remap (študija) {DONE}
 Irma P. [X]; Recidiv PSVT, st.p. RFA AVNRT (2026) {DONE}
 Sreda 23.9.2026
 @osebje: SK#666666 | JI#666666, NB#e0b02e | MJ#ffffff
-Irma P. [C]; AVNRT recidiv
+Irma P. [C]; AVNRT recidiv {DONE}
 Vesna A. L. [R]; PAF
 Četrtek 24.9.2026
 @osebje: ZR#666666, JH#666666 | JI#666666, JŠ#666666 | MJ#ffffff
