@@ -96,6 +96,6 @@ Vesna A. L. [R]; PAF {DONE}
 Četrtek 24.9.2026
 @osebje: ZR#666666, JH#666666 | JI#666666, JŠ#666666 | MJ#ffffff
 Ivana B. V. [R]; PAF / PeAF? {DONE}
-Jožica S. [A]; AF s tahikardnim odgovorom prekatov, st.p. RFA PAF - WACA (2023)
+Jožica S. [A]; AF s tahikardnim odgovorom prekatov, st.p. RFA PAF - WACA (2023) {DONE}
 Zadnje naročilo (11.8.2026): Transseptalna igla BRK-1 71cm (10 KO, ABBOTT);215106	Agilis NXT large (8,5 F)	9 KO	ABBOTT
 Promet LJ-KP: VSE STOJI
