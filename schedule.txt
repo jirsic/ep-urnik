@@ -101,19 +101,24 @@ CABG K. [A]; Redo AF
 Petek 25.9.2026
 Sandra ?. [C]; redo AVNRT
 Ponedeljek 28.9.2026
+@osebje: JH(#2e8b57 | NB#e0b02e, JI(#2e8b57 | MJ(#ffffff
 Nora I. [X]; SVT
 Torek 29.9.2026
-Alojz H.; Monomorfna VT, st.p. impl. ICD, ishemična KMP
-Klemen M.; PAF
+@osebje: JH(#2e8b57 | JI(#2e8b57 | MJ(#ffffff
+Alojz H. [A]; Monomorfna VT, st.p. impl. ICD, ishemična KMP
+Klemen M. [X]; PAF
 Sreda 30.9.2026
-Ljudmila B.; PAF, st.p. EK, st.p. AVR
-Andreja T.; Močno povečano breme prekatne ektopije
-Žiga M.; AVNRT (sprejem zjutraj)
+@osebje: JH(#2e8b57 | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
+Aleša K. [C]; NSVT
+Andreja T. [C]; Močno povečano breme prekatne ektopije
+Žiga M. [C]; AVNRT (sprejem zjutraj)
 Četrtek 1.10.2026
-Aleša K.; NSVT, st.p. RFA
-Matija B.; Recidiv AF, perzistentna, st.p. RFA (2023), st.p. hibridni RFA (2015) - Affera
+@osebje: JH(#2e8b57 | JI(#2e8b57, JŠ(#284d84 | TPK#ffffff
+Ljudmila B. [C]; PAF
+Matija B. [C]; Recidiv AF, perzistentna, st.p. RFA (2023), st.p. hibridni RFA (2015) - Affera
 Petek 2.10.2026
-Matej K.; PAF
-Janez R.; PAF
+@osebje: JH(#2e8b57 | JI(#2e8b57 | MJ(#ffffff
+Matej K. [X]; PAF
+Janez R. [X]; PAF
 Zadnje naročilo (24.9.2026): Transseptalna igla BRK-1 71cm (10 KO, ABBOTT);215106	Agilis NXT large (8,5 F)	9 KO	ABBOTT
 Promet LJ-KP: VSE STOJI
