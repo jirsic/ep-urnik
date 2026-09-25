@@ -99,7 +99,7 @@ Ivana B. V. [R]; PAF / PeAF? {DONE}
 Jožica S. [A]; AF s tahikardnim odgovorom prekatov, st.p. RFA PAF - WACA (2023) {DONE}
 CABG K. [A]; Redo AF {DONE}
 Petek 25.9.2026
-Sandra ?. [C]; redo AVNRT
+Sandra ?. [C]; redo AVNRT {DONE}
 Ponedeljek 28.9.2026
 @osebje: JH(#2e8b57 | NB#e0b02e, JI(#2e8b57 | MJ(#ffffff
 Nora I. [X]; SVT
