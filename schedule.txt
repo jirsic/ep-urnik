@@ -115,7 +115,7 @@ Aleša K. [C]; NSVT/VES {DONE}
 Četrtek 1.10.2026
 @osebje: JH#666666 | JI#666666, JŠ#666666 | TPK#ffffff
 Žiga M. [C]; AVNRT {DONE}
-Matija B. [C]; Recidiv AF, perzistentna, st.p. RFA (2023), st.p. hibridni RFA (2015) - Affera
+Matija B. [C]; Recidiv AF, perzistentna, st.p. RFA (2023), st.p. hibridni RFA (2015) - Affera {DONE}
 Petek 2.10.2026
 @osebje: JH#666666 | JI#666666 | MJ#ffffff
 Matej K. [X]; PAF
