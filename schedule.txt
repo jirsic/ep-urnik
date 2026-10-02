@@ -118,7 +118,7 @@ Aleša K. [C]; NSVT/VES {DONE}
 Matija B. [C]; Recidiv AF, perzistentna, st.p. RFA (2023), st.p. hibridni RFA (2015) - Affera {DONE}
 Petek 2.10.2026
 @osebje: JH#666666 | JI#666666 | MJ#ffffff
-Matej K. [X]; PAF
+Matej K. [X]; PAF {DONE}
 Janez R. [X]; PAF
 Zadnje naročilo (24.9.2026): Transseptalna igla BRK-1 71cm (10 KO, ABBOTT);215106	Agilis NXT large (8,5 F)	9 KO	ABBOTT
 Promet LJ-KP: VSE STOJI
