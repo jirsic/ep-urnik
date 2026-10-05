@@ -120,5 +120,18 @@ Petek 2.10.2026
 @osebje: JH#666666 | JI#666666 | MJ#ffffff
 Matej K. [X]; PAF {DONE}
 Janez R. [X]; PAF {DONE}
+Ponedeljek 5.10.2026
+@osebje: JH(#2e8b57 | NB#e0b02e, JI(#2e8b57 | MJ(#ffffff
+Aleks A. [X]; Recidiv SVT
+Andrej J. [X]; AVRT
+Torek 6.10.2026
+Sreda 7.10.2026
+Četrtek 8.10.2026
+Petek 9.10.2026
+Ponedeljek 12.10.2026
+Torek 13.10.2026
+Sreda 14.10.2026
+Četrtek 15.10.2026
+Petek 16.10.2026
 Zadnje naročilo (24.9.2026): Transseptalna igla BRK-1 71cm (10 KO, ABBOTT);215106	Agilis NXT large (8,5 F)	9 KO	ABBOTT
 Promet LJ-KP: VSE STOJI
