@@ -99,7 +99,7 @@ Ivana B. V. [R]; PAF / PeAF?
 Jožica S. [A]; AF s tahikardnim odgovorom prekatov, st.p. RFA PAF - WACA (2023)
 CABG K. [A]; Redo AF
 Petek 25.9.2026
-@osebje: ZR(#e0b02e | JI(#2e8b57 | MJ(#ffffff
+@osebje: ZR#666666 | JI#666666 | MJ#ffffff
 Sandra ?. [C]; redo AVNRT
 Ponedeljek 28.9.2026
 @osebje: JH#666666 | NB#e0b02e, JI#666666 | MJ#ffffff
@@ -134,5 +134,21 @@ Torek 13.10.2026
 Sreda 14.10.2026
 Četrtek 15.10.2026
 Petek 16.10.2026
+Ponedeljek 19.10.2026
+@osebje: SG(#4b9cdf | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
+Armin R. [X]; 
+Torek 20.10.2026
+@osebje: JI(#2e8b57, NB#e0b02e | MJ(#ffffff
+Rafael B. [C]; EndoMaze Remap (študija)
+Jan V. [C]; VES
+Sreda 21.10.2026
+@osebje: ZR(#e0b02e | JI(#2e8b57 | MJ(#ffffff
+Ante C. [A]; PeAF
+Matej J. [A]; PeAF
+Četrtek 22.10.2026
+@osebje: JI(#2e8b57, NB#e0b02e, JŠ(#284d84 | TPK#ffffff
+Darja P. [X]; PAF 
+Marija M. [X]; PAF recidiv (2015)
+Petek 23.10.2026
 Zadnje naročilo (24.9.2026): Transseptalna igla BRK-1 71cm (10 KO, ABBOTT);215106	Agilis NXT large (8,5 F)	9 KO	ABBOTT
 Promet LJ-KP: VSE STOJI
