@@ -136,7 +136,7 @@ Sreda 14.10.2026
 Petek 16.10.2026
 Ponedeljek 19.10.2026
 @osebje: SG#666666 | JI#666666, NB#e0b02e | MJ#ffffff
-Armin R. [C]; 
+Armin R. [C]; {DONE}
 Torek 20.10.2026
 @osebje: JI#666666, NB#666666 | MJ#666666
 Rafael B. [C]; EndoMaze Remap (študija)
