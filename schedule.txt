@@ -143,7 +143,7 @@ Rafael B. [C]; EndoMaze Remap (študija) {DONE}
 Sreda 21.10.2026
 @osebje: ZR#666666 | JI#666666 | MJ#ffffff
 Ante C. [A]; PeAF {DONE}
-Matej J. [A]; PeAF
+Matej J. [A]; PeAF {DONE}
 Četrtek 22.10.2026
 @osebje: JI#666666, NB#666666, JŠ#666666 | TP#666666
 Darja P. [X]; PAF
