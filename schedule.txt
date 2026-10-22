@@ -146,7 +146,7 @@ Ante C. [A]; PeAF {DONE}
 Matej J. [A]; PeAF {DONE}
 Četrtek 22.10.2026
 @osebje: JI#666666, NB#666666, JŠ#666666 | TP#666666
-Darja P. [X]; PAF
+Darja P. [X]; PAF {DONE}
 Marija M. [X]; PAF recidiv (2015)
 Petek 23.10.2026
 @osebje: JI#666666 | MJ#666666
