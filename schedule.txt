@@ -151,7 +151,7 @@ Marija M. [X]; PAF recidiv (2015) {DONE}
 Petek 23.10.2026
 @osebje: JI#666666 | MJ#666666
 Luka B. [R]; PAF {DONE}
-Marko M. [R]; PAF
+Marko M. [R]; PAF {DONE}
 Ponedeljek 26.10.2026
 @osebje: ZR(#e0b02e | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
 Jasaitis A. [X]; PSVT
