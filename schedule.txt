@@ -150,7 +150,7 @@ Darja P. [X]; PAF {DONE}
 Marija M. [X]; PAF recidiv (2015) {DONE}
 Petek 23.10.2026
 @osebje: JI#666666 | MJ#666666
-Luka B. [R]; PAF
+Luka B. [R]; PAF {DONE}
 Marko M. [R]; PAF
 Zadnje naročilo (24.9.2026): Transseptalna igla BRK-1 71cm (10 KO, ABBOTT);215106	Agilis NXT large (8,5 F)	9 KO	ABBOTT
 Promet LJ-KP: VSE STOJI
