@@ -155,7 +155,7 @@ Marko M. [R]; PAF {DONE}
 Ponedeljek 26.10.2026
 @osebje: ZR(#e0b02e | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
 Jasaitis A. [X]; PSVT
-Andreja V. [X]; AVNRT
+Andreja V. [X]; AVNRT {DONE}
 Torek 27.10.2026
 @osebje: ZR(#e0b02e | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
 Karlinca K. [C]; EndoMaze remap (študija)
