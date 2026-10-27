@@ -159,7 +159,7 @@ Andreja V. [X]; AVNRT {DONE}
 Torek 27.10.2026
 @osebje: ZR#666666 | JI#666666, NB#e0b02e | MJ#ffffff
 Karlinca K. [C]; EndoMaze remap (študija) {DONE}
-Ema L. [A]; Netipična atrijska undulacija, st.p. RFA PAF/AU
+Ema L. [A]; Netipična atrijska undulacija, st.p. RFA PAF/AU {DONE}
 Sreda 28.10.2026
 @osebje: SK#666666 | JI#666666, NB#e0b02e | MJ#ffffff
 Ivan Č. [A]; Recidiv PAF, st. p. RFA (Affera)
