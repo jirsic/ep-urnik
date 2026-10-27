@@ -158,7 +158,7 @@ Jasaitis A. [X]; PSVT {DONE}
 Andreja V. [X]; AVNRT {DONE}
 Torek 27.10.2026
 @osebje: ZR(#e0b02e | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
-Karlinca K. [C]; EndoMaze remap (študija)
+Karlinca K. [C]; EndoMaze remap (študija) {DONE}
 Ema L. [A]; Netipična atrijska undulacija, st.p. RFA PAF/AU
 Sreda 28.10.2026
 @osebje: SK#666666 | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
