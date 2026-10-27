@@ -153,24 +153,25 @@ Petek 23.10.2026
 Luka B. [R]; PAF {DONE}
 Marko M. [R]; PAF {DONE}
 Ponedeljek 26.10.2026
-@osebje: ZR(#e0b02e | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
+@osebje: ZR#666666 | JI#666666, NB#e0b02e | MJ#ffffff
 Jasaitis A. [X]; PSVT {DONE}
 Andreja V. [X]; AVNRT {DONE}
 Torek 27.10.2026
-@osebje: ZR(#e0b02e | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
+@osebje: ZR#666666 | JI#666666, NB#e0b02e | MJ#ffffff
 Karlinca K. [C]; EndoMaze remap (študija) {DONE}
 Ema L. [A]; Netipična atrijska undulacija, st.p. RFA PAF/AU
 Sreda 28.10.2026
-@osebje: SK#666666 | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
+@osebje: SK#666666 | JI#666666, NB#e0b02e | MJ#ffffff
 Ivan Č. [A]; Recidiv PAF, st. p. RFA (Affera)
-
 Jože K. [C]; EndoMaze remap (študija)
+Zala B. [C]; Idioventrikularni ritem
 Četrtek 29.10.2026
-@osebje: ZR(#e0b02e | JI(#2e8b57, JŠ(#284d84 | TPK#ffffff
+@osebje: ZR#666666 | JI#666666, JŠ#666666 | TPK#ffffff
 Sašo B. [X]; PAF
 Eldar F. [C]; Paroksizmalna AU
+Aleksander Janez K. [C]; Recidiv VT
 Petek 30.10.2026
-@osebje: JŽ(#37b7c3 | JI(#2e8b57 | MJ(#ffffff
+@osebje: JŽ#666666 | JI#666666 | MJ#ffffff
 Sead D. [C]; EndoMaze remap
 Marija A. [X]; PAF (visoko simptomatska)
 Zadnje naročilo (24.9.2026): Transseptalna igla BRK-1 71cm (10 KO, ABBOTT);215106	Agilis NXT large (8,5 F)	9 KO	ABBOTT
