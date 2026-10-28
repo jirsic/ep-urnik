@@ -162,7 +162,7 @@ Karlinca K. [C]; EndoMaze remap (študija) {DONE}
 Ema L. [A]; Netipična atrijska undulacija, st.p. RFA PAF/AU {DONE}
 Sreda 28.10.2026
 @osebje: SK#666666 | JI#666666, NB#e0b02e | MJ#ffffff
-Jože K. [C]; EndoMaze remap (študija)
+Jože K. [C]; EndoMaze remap (študija) {DONE}
 Ivan Č. [C]; Recidiv PAF, st. p. RFA (Affera)
 Zala B. [C]; Idioventrikularni ritem
 Četrtek 29.10.2026
