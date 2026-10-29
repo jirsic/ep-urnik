@@ -164,12 +164,12 @@ Sreda 28.10.2026
 @osebje: SK#666666 | JI#666666, NB#e0b02e | MJ#ffffff
 Jože K. [C]; EndoMaze remap (študija) {DONE}
 Ivan Č. [C]; Recidiv PAF, st. p. RFA (Affera) {DONE}
-Zala B. [C]; Idioventrikularni ritem
+Zala B. [C]; Idioventrikularni ritem {DONE}
 Četrtek 29.10.2026
 @osebje: ZR#666666 | JI#666666, JŠ#666666 | TPK#ffffff
 Sašo B. [X]; PAF
 Eldar F. [X]; Paroksizmalna AU
-Aleksander Janez K. [C]; Recidiv VT {DONE}
+Aleksander Janez K. [X]; Recidiv VT
 Petek 30.10.2026
 @osebje: JŽ#666666 | JI#666666 | MJ#ffffff
 Sead D. [X]; EndoMaze remap
