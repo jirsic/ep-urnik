@@ -173,7 +173,7 @@ Aleksander Janez K. [X]; Recidiv VT {DONE}
 Petek 30.10.2026
 @osebje: JŽ#666666 | JI#666666 | MJ#ffffff
 Marija A. [X]; PAF (visoko simptomatska) {DONE}
-Sead D. [X]; EndoMaze remap
+Sead D. [X]; EndoMaze remap {DONE}
 Ponedeljek 2.11.2026
 @osebje: MS#666666 | NB#e0b02e, JI#666666 | MJ#ffffff
 Irenej Ž. [X]; Recidiv AVRT
