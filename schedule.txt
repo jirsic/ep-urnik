@@ -182,6 +182,7 @@ Torek 3.11.2026
 @osebje: MS#666666 | JI#666666, NB#e0b02e | MJ#ffffff
 Danica B. [A]; PeAF
 Mirana F. [A]; Recidivi atipične AU - močno simptomatska, st. p. več RFA
+??. ??. [A]; AF
 Sreda 4.11.2026
 @osebje: MS#666666 | JI#666666, NB#e0b02e | MJ#ffffff
 Anton O. [X]; VT
@@ -193,6 +194,6 @@ Miroslav Č. [C]; Tipična AU
 Petek 6.11.2026
 @osebje: MS#666666 | JI#666666, NB#e0b02e | MJ#ffffff
 Fritz J. [C]; PSVT
-Irena Č.; PAF 
+Irena Č.; PAF
 Zadnje naročilo (24.9.2026): Transseptalna igla BRK-1 71cm (10 KO, ABBOTT);215106	Agilis NXT large (8,5 F)	9 KO	ABBOTT
 Promet LJ-KP: VSE STOJI
