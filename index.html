@@ -257,7 +257,7 @@ function render(text){
   for (var i=0;i<lines.length;i++){
     var line = lines[i].replace(/^\s+|\s+$/g,"");
     if (!line) continue;
-    var d = parseDate(line);
+    var d = (line.indexOf(";") === -1 && !/^@osebje/i.test(line)) ? parseDate(line) : null;
     if (d){ cur = { date:d, cases:[], staff:null }; days.push(cur); }
     else if (cur){
       // Staff line: "@osebje: AN#e0892e, MK#4b9cdf | TŽ#1b1060 | Nok#284d84"
