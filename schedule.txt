@@ -189,25 +189,11 @@ Anton O. [X]; VT {DONE}
 Marija Z. [X]; Simptomatska PAF (Affera) {DONE}
 Četrtek 5.11.2026
 @osebje: MS#666666 | JI#666666, JŠ#666666 | TPK#ffffff
-Danica K. [X]; PAF
 Miroslav Č. [C]; Tipična AU
+Danica K. [X]; PAF
 Petek 6.11.2026
 @osebje: MS#666666 | JI#666666, NB#e0b02e | MJ#ffffff
 Fritz J. [C]; PSVT
 Irena Č.; PAF
 Zadnje naročilo (4.11.2026): 211925	Kratko vodilo 6F	2 SC	ARROW
-213427	Transseptalna igla BRK-1 71cm	14 KO	ABBOTT
-214240	Agilis NXT small (8,5 F)	3 KO	ABBOTT
-215106	Agilis NXT large (8,5 F)	11 KO	ABBOTT
-214028	PTCA kat. Acunav uz 10F GE	8 KO	BIOWE
-217892	DECANAV D krivina (10 elekt. 2-8-2 )	3 KO	BIOWE
-311379	SMART TOUCH ST SF DUO D krivina ablacijski kateter (8F, navigacijski)	2 KO	BIOWE
-219210	TACTIFLEX DUO D krivina ablacijski kateter	1 KO	ABBOTT
-261252	NAVX EnsiteX cevka za izpiralno črpalko	9 KO	ABBOTT
-311566	VOLT 28mm PFA kateter	2 KO	ABBOTT
-219216	Agilis NXT medium za VOLT (13 F)	2 KO	ABBOTT
-217924	DYNAMIC XT (10 elekt. 2-6-2 6F LARGE)	10 KO	BOSTON
-218814	SPHERE-9 cevka za izpiralno črpalko	1 SC	MEDTRONIC
-213843	Plinska cevka za Freezor ablacijski kateter	3 KO	MEDTRONIC
-
 Promet LJ-KP: VSE STOJI
