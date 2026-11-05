@@ -206,7 +206,6 @@ Franc K. [A]; aAU
 Sreda 11.11.2026
 @osebje: ZR(#e0b02e | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
 Mirjan J. [C]; EPI - Recidiv VT, st.p. RFA ishemične VT, st.p. impl. ICD (epikardialni pristop) - splošna anestezija 
-
 Četrtek 12.11.2026
 @osebje: ZR(#e0b02e | JI(#2e8b57, JŠ(#284d84 | MJ(#ffffff
 Franc D. [A]; PeAF, tahikardna KMP, prekinjen poseg 3.11.2026 - splošna anestezija
