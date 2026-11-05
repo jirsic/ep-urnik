@@ -189,7 +189,7 @@ Anton O. [X]; VT {DONE}
 Marija Z. [X]; Simptomatska PAF (Affera) {DONE}
 Četrtek 5.11.2026
 @osebje: MS#666666 | JI#666666, JŠ#666666 | TPK#ffffff
-Miroslav Č. [C]; Tipična AU
+Miroslav Č. [C]; Tipična AU {DONE}
 Danica K. [X]; PAF
 Petek 6.11.2026
 @osebje: MS#666666 | JI#666666, NB#e0b02e | MJ#ffffff
