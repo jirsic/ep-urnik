@@ -210,7 +210,7 @@ Mirjan J. [C]; EPI - Recidiv VT, st.p. RFA ishemične VT, st.p. impl. ICD (epika
 @osebje: ZR#666666 | JI#666666, JŠ#666666 | MJ#ffffff
 Franc D. [A]; PeAF, tahikardna KMP, prekinjen poseg - splošna anestezija {DONE}
 Anton S. [A]; Tahikardna AF, srčno popuščanje {DONE}
-NM pacient [C]; Neobstojne VT
+NM pacient [C]; Neobstojne VT {DONE}
 Petek 13.11.2026
 @osebje: ZR#666666 | JI#666666 | MJ#ffffff
 ??. ?? [X]; PSVT/PAF
