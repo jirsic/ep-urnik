@@ -215,5 +215,20 @@ Petek 13.11.2026
 @osebje: ZR#666666 | JI#666666 | MJ#ffffff
 ??. ?? [X]; PSVT/PAF
 Aleksander G. [X]; Atipična AU
+Ponedeljek 16.11.2026
+Torek 17.11.2026
+@osebje: MS(#2e8b57, NM(#666666 | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
+Nataša P. [A]; VES/SVES, st.p. RFA (Affera)
+Matjaž P.  [A]; Netipična undulacija in ventrikularna ektopija, st.p. RFA (julij 026), st.p. CRTD (julij 2026)
+Sreda 18.11.2026
+@osebje: MS(#2e8b57, NM(#666666 | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
+Ivan O. [A]; KAF, st.p. neuspešni EK
+Ivan G. [A]; PeAF, st.p. RFA, st.p. EK (Affera)
+Četrtek 19.11.2026
+@osebje: MS(#2e8b57, NM(#666666 | JI(#2e8b57, JŠ(#284d84 | MJ(#ffffff
+Anton V.; St.p. recidivu AF, st.p. RFA, remodelacija desnega prekata in TR
+Petek 20.11.2026
+@osebje: MS(#2e8b57, NM(#666666 | JI(#2e8b57 | MJ(#ffffff
+Venceslava Ž.; PAF/PeAF
 Zadnje naročilo (4.11.2026): 211925	Kratko vodilo 6F	2 SC	ARROW
 Promet LJ-KP: VSE STOJI
