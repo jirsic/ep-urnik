@@ -218,7 +218,7 @@ Ponedeljek 16.11.2026
 Torek 17.11.2026
 @osebje: MS#666666, NM#666666 | JI#666666, NB#e0b02e | MJ#ffffff
 Nataša P. [A]; VES/SVES, st.p. RFA (Affera) {DONE}
-Matjaž P. [A]; Netipična undulacija in ventrikularna ektopija, st.p. RFA (julij 026), st.p. CRTD (julij 2026)
+Matjaž P. [A]; Netipična undulacija in ventrikularna ektopija, st.p. RFA (julij 026), st.p. CRTD (julij 2026) {DONE}
 Sreda 18.11.2026
 @osebje: MS#666666, NM#666666 | JI#666666, NB#e0b02e | MJ#ffffff
 Darja P. [A]; AF
