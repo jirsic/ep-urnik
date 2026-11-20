@@ -230,7 +230,7 @@ Roman L. [C]; VT {DONE}
 Anton O. [C]; VT recidiv {DONE}
 Petek 20.11.2026
 @osebje: MS#666666, NM#666666 | JI#666666 | MJ#ffffff
-Venceslava Ž. [R]; PAF/PeAF (Farapulse)
-Anton V. [X]; St.p. recidivu AF, st.p. RFA, remodelacija desnega prekata in TR
+Venceslava Ž. [X]; PAF/PeAF (VOLT)
+Anton V. [C]; SVT
 Zadnje naročilo (4.11.2026): 211925	Kratko vodilo 6F	2 SC	ARROW
 Promet LJ-KP: VSE STOJI
