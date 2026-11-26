@@ -248,7 +248,7 @@ Franc M. [A]; PeAF (EndoMaze) (študija) {DONE}
 Strashko J. [A]; Tahikardna AF, dilatativna KMP, strdek v LAA {DONE}
 Četrtek 26.11.2026
 @osebje: ZR#666666, NM#666666 | JI#666666, NB#e0b02e | MJ#ffffff
-Jožef J. [X]; PeAF s tahikardnim odgovorom prekatov, st. po impl. ICD
+Jožef J. [X]; PeAF s tahikardnim odgovorom prekatov, st. po impl. ICD {DONE}
 Anton V. [X]; St. po recidivu AF, st. po RFA, remodelacija desnega prekata in TR
 Petek 27.11.2026
 @osebje: ZR#666666, NM#666666 | JI#666666, NB#e0b02e | MJ#ffffff
