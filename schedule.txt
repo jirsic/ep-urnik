@@ -252,7 +252,7 @@ Jožef J. [X]; PeAF s tahikardnim odgovorom prekatov, st. po impl. ICD {DONE}
 Anton V. [X]; St. po recidivu AF, st. po RFA, remodelacija desnega prekata in TR {DONE}
 Petek 27.11.2026
 @osebje: ZR#666666, NM#666666 | JI#666666, NB#e0b02e | MJ#ffffff
-Roman L. [A]; VT
+Roman L. [A]; VT {DONE}
 Ponedeljek 30.11.2026
 @osebje: MS#666666 | NB#e0b02e, JI#666666 | MJ#ffffff
 Pina J. [X]; SVT
