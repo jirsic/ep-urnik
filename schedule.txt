@@ -253,5 +253,21 @@ Anton V. [X]; St. po recidivu AF, st. po RFA, remodelacija desnega prekata in TR
 Petek 27.11.2026
 @osebje: ZR#666666, NM#666666 | JI#666666, NB#e0b02e | MJ#ffffff
 Roman L. [A]; VT
+Ponedeljek 30.11.2026
+@osebje: MS(#2e8b57 | NB#e0b02e, JI(#2e8b57 | MJ(#ffffff
+Pina J. [X]; SVT
+Andrej V. [X]; PAF
+Torek 1.12.2026
+@osebje: NM(#666666, MS(#2e8b57 | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
+Alojz H. [C]; VT EPI (NM)
+Sreda 2.12.2026
+@osebje: ZR(#e0b02e, NM(#666666 | JI(#2e8b57, NB#e0b02e | MJ(#ffffff
+Ivan G. [A]; PeAF, st.p. RFA PeAF (neuspešno 18.11.26), St.p. RFA AT
+Suzana R. [A]; Ponovna AF, st.p. RFA
+Četrtek 3.12.2026
+@osebje: NM(#666666, MS(#2e8b57 | JI(#2e8b57, JŠ(#284d84 | MJ(#ffffff
+Leopold K. [X]; Tipična preddvorna undulacija, PeAF
+Janez P. [X]; St. p. RFA, AF
+Petek 4.12.2026
 Zadnje naročilo (4.11.2026): 211925	Kratko vodilo 6F	2 SC	ARROW
 Promet LJ-KP: VSE STOJI
